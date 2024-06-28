@@ -8,12 +8,24 @@ import { ServiceOffered } from "@/lib/ServiceOffered";
 import FormSection from "@/app/HomePage Sections/FormSection";
 import { generalMetadata } from "@/lib/MetaData";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {...generalMetadata, title: "Services | AmeriCare Atlanta"};
 
 export default function ServicesPage() {
     return (
         <div>
+            <Toaster
+                position="bottom-right"
+                toastOptions={
+                    {
+                        style: {
+                            background: '#363636',
+                            color: '#fff',
+                        }
+                    }
+                }
+            />
             <NavigationComponent />
 
             <div className="relative z-10">
