@@ -173,7 +173,7 @@ export default function FormSection() {
 
         const SendWithBrevo = new BrevoEmailClient();
 
-        const ORGANISATION_EMAIL= process.env.ORGANISATION_EMAIL_ELIGIBILITY!
+        const ORGANISATION_EMAIL= process.env.NEXT_PUBLIC_ORGANISATION_EMAIL_ELIGIBILITY!
         const ORGANISATION_NAME = process.env.NEXT_PUBLIC_ORGANISATION_NAME!
 
         const americareECopy = eligibilityCheck(
