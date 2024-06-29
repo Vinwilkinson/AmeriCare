@@ -8,7 +8,7 @@ export const metadata: Metadata = { ...generalMetadata, title: "Thank you | Amer
 
 export default function ThankYouPage() {
     return (
-        <div className='max-2xl:pt-32 py-8'>
+        <div className='max-2xl:pt-32 pt-24 py-8'>
             <NavigationComponent />
             <BookAppointment />
         </div>
