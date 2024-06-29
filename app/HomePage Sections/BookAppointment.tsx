@@ -311,7 +311,7 @@ export default function FormSection() {
                             </div>
 
                             <div className="grid gap-2 w-full mt-4">
-                                <div className="flex gap-3 sm:items-center items-start">
+                                <div className="flex gap-3 items-center">
                                     <div className="content">
                                         <label className="checkBox">
                                             <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" />
