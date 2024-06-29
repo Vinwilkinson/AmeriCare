@@ -36,7 +36,7 @@ export default function FooterSection() {
                             />
                             <CustomBtn
                                 customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
-                                linkHref="/#book-an-appointment"
+                                linkHref="/book-an-appointment"
                                 noBorder={true}
                                 text="Book an Appointment"
                             />

@@ -68,7 +68,7 @@ export default function HeroSection() {
                     <span className="pt-2 pb-1 2xl:text-7xl sm:text-5xl text-4xl drop-shadow-md font-semibold">Compassionate Care, Right at Home.</span>
                     <span className="2xl:text-2xl mb-10 sm:text-xl text-lg opacity-60 drop-shadow-md">With AmeriCare, You&apos;ll Never Walk Alone</span>
                     <CustomBtn
-                        linkHref="#book-an-appointment"
+                        linkHref="/book-an-appointment"
                         text="Book an Appointment"
                         noBorder
                         inHero
