@@ -100,8 +100,8 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             )}
                         />
                         <CustomBtn
-                            text="Contact us"
-                            linkHref="#"
+                            text="Book an Appointment"
+                            linkHref="/#book-an-appointment"
                             noBorder={true}
                             inHero
                             inView={inViewContainer}

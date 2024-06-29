@@ -65,6 +65,49 @@ img {
   text-shadow: 0.1em 0.1em #000;
 }
 
+
+.clear {
+  clear: both;
+}
+
+.checkBox {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 2px #000;
+}
+
+.checkBox div {
+  width: 60px;
+  height: 60px;
+  background-color: #6fad45;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 100;
+}
+
+.checkBox input[type=checkbox]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type=checkbox] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.transition {
+  transition: 300ms ease;
+}
+
 /* for Dark mode */
 @media (prefers-color-scheme: dark) {
   .hover-bg-odd:hover {
@@ -93,6 +136,10 @@ img {
       background-image: linear-gradient(#54545408 1.8px, transparent 1.8px), linear-gradient(to right, #54545408 1.8px, #00000000 1.8px);
       background-size: 36px 36px;
       background-position: 0 1rem;
+    }
+
+    .checkBox {
+      box-shadow: 0px 0px 0px 2px #fff;
     }
 }
 
