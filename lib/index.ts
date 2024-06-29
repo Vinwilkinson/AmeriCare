@@ -126,3 +126,10 @@ export function formatDateTime(dateString: string): string {
 
     return formattedDateTime;
 }
+
+export const isIOS = (): boolean => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+    // Check for iOS devices
+    return /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+};
