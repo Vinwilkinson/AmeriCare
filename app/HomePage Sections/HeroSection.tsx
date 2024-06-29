@@ -8,6 +8,8 @@ import NavigationComponent from "../components/NavSection";
 import CustomBtn from "../components/CustomBtn";
 import { useEffect, useRef, useState } from "react";
 import { isIOS } from "@/lib";
+import Image from "next/image";
+
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
