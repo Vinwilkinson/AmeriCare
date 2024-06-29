@@ -3,7 +3,7 @@ import { generalMetadata } from '@/lib/MetaData';
 import { Metadata } from 'next';
 import BookAppointment from "@/app/HomePage Sections/BookAppointment";
 
-export const metadata: Metadata = { ...generalMetadata, title: "Thank you | AmeriCare Atlanta" };
+export const metadata: Metadata = { ...generalMetadata, title: "Book an Appointment | AmeriCare Atlanta" };
 
 
 export default function ThankYouPage() {
