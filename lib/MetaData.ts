@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const generalMetadata: Metadata = {
-    title: 'Compassionate Home Healthcare | AmeriCare Atlanta',
-    description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',
+    title: 'AmerICare Home Health | Atlanta’s Award Winning Home Health Provider',
+    description: "Experience personalized in home care delivered to your doorstep. Learn more about Atlanta’s top-rated home health care provider. Award-winning health services for your family's health and well-being. Looking for skilled home care, companionship, physical therapy and more? Contact us today!",
     keywords: [
         'home healthcare Atlanta',
         'elderly care Atlanta',
@@ -100,8 +100,8 @@ export const generalMetadata: Metadata = {
     authors: [{name: "AmeriCare", url: "https://americareinhome.com/"}, {name: "Fabiconcept", url: "fabiconcept.online"}],  // Not provided in the information
     creator: 'Calvin Wilkinson MPH',  // Company name as creator
     openGraph: {
-        title: 'Compassionate Home Healthcare | AmeriCare Atlanta',  // Consistent title
-        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',  // Consistent description
+        title: 'AmerICare Home Health | Atlanta’s Award Winning Home Health Provider',  // Consistent title
+        description: "Experience personalized in home care delivered to your doorstep. Learn more about Atlanta’s top-rated home health care provider. Award-winning health services for your family's health and well-being. Looking for skilled home care, companionship, physical therapy and more? Contact us today!",  // Consistent description
         url: 'https://americareinhome.com/',  // Replace with your actual website URL
         locale: 'en_US',  // Assuming US English content
         images: [
