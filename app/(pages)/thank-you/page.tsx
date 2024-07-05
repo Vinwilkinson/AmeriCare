@@ -13,9 +13,9 @@ export const metadata: Metadata = { ...generalMetadata, title: "Thank you | Amer
 
 export default function ThankYouPage() {
     return (
-        <div className='grid place-items-center pt-32'>
+        <div className='grid place-items-center py-32'>
             <NavigationComponent />
-            <InViewWrapper animation={fadeIn} className="min-h-screen">
+            <InViewWrapper animation={fadeIn} className="">
                 <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[calc(100vw-4rem)] bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10 py-8">
                     <div className="grid place-items-center relative">
                         <Image

@@ -11,32 +11,32 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function FormSection() {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.google.com/recaptcha/api.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
+    // useEffect(() => {
+    //     const script = document.createElement('script');
+    //     script.src = 'https://www.google.com/recaptcha/api.js';
+    //     script.async = true;
+    //     script.defer = true;
+    //     document.body.appendChild(script);
     
-        const timestampScript = document.createElement('script');
-        timestampScript.innerHTML = `
-          function timestamp() {
-            var response = document.getElementById("g-recaptcha-response");
-            if (response == null || response.value.trim() == "") {
-              var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-              elems["ts"] = JSON.stringify(new Date().getTime());
-              document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-            }
-          }
-          setInterval(timestamp, 500);
-        `;
-        document.body.appendChild(timestampScript);
+    //     const timestampScript = document.createElement('script');
+    //     timestampScript.innerHTML = `
+    //       function timestamp() {
+    //         var response = document.getElementById("g-recaptcha-response");
+    //         if (response == null || response.value.trim() == "") {
+    //           var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+    //           elems["ts"] = JSON.stringify(new Date().getTime());
+    //           document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+    //         }
+    //       }
+    //       setInterval(timestamp, 500);
+    //     `;
+    //     document.body.appendChild(timestampScript);
     
-        return () => {
-          document.body.removeChild(script);
-          document.body.removeChild(timestampScript);
-        };
-      }, []);
+    //     return () => {
+    //       document.body.removeChild(script);
+    //       document.body.removeChild(timestampScript);
+    //     };
+    //   }, []);
 
     return (
         <>
@@ -339,7 +339,7 @@ export default function FormSection() {
                                 {/* <input type="hidden" name="debug" value="1"/>                             
                                 <input type="hidden" name="debugEmail" value="calvin@americareinhome.com" /> */}
                             </div>
-                            <div className="g-recaptcha mt-4" data-sitekey="6Lcr2AMqAAAAAEtI4W19UsAL5iMrEEnmxeuyY8Sh"></div>
+                            {/* <div className="g-recaptcha mt-4" data-sitekey="6Lcr2AMqAAAAAEtI4W19UsAL5iMrEEnmxeuyY8Sh"></div> */}
                             {/* Submit button */}
                             <div className="flex flex-col gap-2 mt-6 group sm:w-fit">
                                 <button
