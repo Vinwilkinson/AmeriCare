@@ -277,8 +277,8 @@ export default function FormSection() {
                                                 "bg-transparent",
                                                 "w-full py-4 px-12 sm:text-lg",
                                             )}
-                                            name="state"
-                                            id="state"
+                                            name="00NHs00000whmyT"
+                                            id="00NHs00000whmyT"
                                             size={20}
                                             maxLength={20}
                                             required
@@ -333,11 +333,11 @@ export default function FormSection() {
 
                             {/* Hidden elements */}
                             <div className="hidden">
-                                <input type="hidden" readOnly name='captcha_settings' value='{"keyname":"AmeriCare","fallback":"true","orgId":"00DHs000008mYi7","ts":""}' />
+                                {/* <input type="hidden" readOnly name='captcha_settings' value='{"keyname":"AmeriCare","fallback":"true","orgId":"00DHs000008mYi7","ts":""}' /> */}
                                 <input type="hidden" readOnly name="oid" value="00DHs000008mYi7" />
                                 <input type="hidden" readOnly name="retURL" value="https://americareinhome.com/thank-you" />
-                                {/* <input type="hidden" name="debug" value="1"/>                             
-                                <input type="hidden" name="debugEmail" value="calvin@americareinhome.com" /> */}
+                                {/* <input type="hidden" name="debug" value="1"/>                              */}
+                                {/* <input type="hidden" name="debugEmail" value="calvin@americareinhome.com" /> */}
                             </div>
                             {/* <div className="g-recaptcha mt-4" data-sitekey="6Lcr2AMqAAAAAEtI4W19UsAL5iMrEEnmxeuyY8Sh"></div> */}
                             {/* Submit button */}
