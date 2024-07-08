@@ -106,9 +106,9 @@ export const generalMetadata: Metadata = {
         locale: 'en_US',  // Assuming US English content
         images: [
             {
-                url: 'https://americare.sirv.com/cdc-GnLuuG9crEY-unsplash.jpg', // Replace with a relevant AmeriCare image URL
-                width: 12112,  // Adjust width for optimal display
-                height: 8008,  // Adjust height for optimal display
+                url: 'https://americare.sirv.com/americare-bg.jpg', // Replace with a relevant AmeriCare image URL
+                width: 978,  // Adjust width for optimal display
+                height: 782,  // Adjust height for optimal display
                 alt: 'AmeriCare Caregiver Assisting Senior Client',  // Descriptive alt text
             },
         ],
