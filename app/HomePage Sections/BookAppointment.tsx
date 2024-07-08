@@ -282,7 +282,6 @@ export default function FormSection() {
                                             name="00NHs00000whmyT"
                                             id="00NHs00000whmyT"
                                             size={20}
-                                            maxLength={80}
                                             required
                                         />
                                     </div>
