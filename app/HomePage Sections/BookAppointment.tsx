@@ -217,9 +217,10 @@ export default function FormSection() {
                                             required
                                         >
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={""}>Please choose an option</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Companionship"}>Companion</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Companionship"}>Companionship</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Personal Care"}>Home maker</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Skilled Nursing"}>Personal care worker</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"other"}>Other</option>
 
                                         </select>
                                         <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
@@ -258,7 +259,7 @@ export default function FormSection() {
 
                                 {/* State/Province */}
                                 <div className="flex flex-col gap-2">
-                                    <span className="flex gap-1 sm:text-base text-sm">State/Province <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <span className="flex gap-1 sm:text-base text-sm">Address <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
                                     <div className={clsx(
                                         "relative smooth rounded-xl overflow-hidden",
                                         "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
@@ -280,7 +281,7 @@ export default function FormSection() {
                                             name="00NHs00000whmyT"
                                             id="00NHs00000whmyT"
                                             size={20}
-                                            maxLength={20}
+                                            maxLength={80}
                                             required
                                         />
                                     </div>
