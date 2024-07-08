@@ -217,10 +217,11 @@ export default function FormSection() {
                                             required
                                         >
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={""}>Please choose an option</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Personal Care"}>Personal Care</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Companionship"}>Companionship</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Personal Care"}>Home maker</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Skilled Nursing"}>Personal care worker</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"other"}>Other</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Home Maker"}>Home Maker</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Skilled Nursing"}>Skilled Nursing</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Other"}>Other</option>
 
                                         </select>
                                         <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
