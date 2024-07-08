@@ -34,8 +34,8 @@ export const eligibilityCheck = ({ address, dob, email, firstName, lastName, pho
                         font-optical-sizing: auto;
                         font-weight: 500;
                         font-style: normal;
-                        background-color: #1d1b1c;
-                        color: #fff;
+                        background-color: #eee;
+                        color: #000;
                         margin: 0;
                         padding: 0;
                         display: flex;
@@ -48,7 +48,7 @@ export const eligibilityCheck = ({ address, dob, email, firstName, lastName, pho
                         width: 100%;
                         max-width: 600px;
                         padding: 1rem;
-                        background-color: #2e2c2f;
+                        background-color: #fff;
                         border-radius: 8px;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                     }
@@ -133,8 +133,8 @@ export const onlineApplication = ({ email, firstName, lastName, phone, coverLett
                         font-optical-sizing: auto;
                         font-weight: 500;
                         font-style: normal;
-                        background-color: #1d1b1c;
-                        color: #fff;
+                        background-color: #eee;
+                        color: #000;
                         margin: 0;
                         padding: 0;
                         display: flex;
@@ -147,7 +147,7 @@ export const onlineApplication = ({ email, firstName, lastName, phone, coverLett
                         width: 100%;
                         max-width: 600px;
                         padding: 1rem;
-                        background-color: #2e2c2f;
+                        background-color: #fff;
                         border-radius: 8px;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                     }
