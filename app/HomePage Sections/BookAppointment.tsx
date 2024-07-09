@@ -258,9 +258,9 @@ export default function FormSection() {
                                     </div>
                                 </div>
 
-                                {/* State/Province */}
+                                {/* Street */}
                                 <div className="flex flex-col gap-2">
-                                    <span className="flex gap-1 sm:text-base text-sm">Address <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <span className="flex gap-1 sm:text-base text-sm">Street <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
                                     <div className={clsx(
                                         "relative smooth rounded-xl overflow-hidden",
                                         "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
@@ -272,25 +272,113 @@ export default function FormSection() {
                                         />
                                         <input
                                             type="text"
-                                            placeholder="123 Main St, City, State ZIP"
+                                            placeholder="123 Main St"
                                             className={clsx(
                                                 "peer",
                                                 "dark:bg-white/5 bg-primary/5 outline-none",
                                                 "bg-transparent",
                                                 "w-full py-4 px-12 sm:text-lg",
                                             )}
-                                            name="00NHs00000whmyT"
-                                            id="00NHs00000whmyT"
+                                            name="street"
+                                            id="street"
                                             size={20}
+                                            maxLength={20}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                {/* City */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">City <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaAddressBook className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="City"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="city"
+                                            id="city"
+                                            size={20}
+                                            maxLength={40}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                {/* State/Province */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">State/Province <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaAddressBook className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="State"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="state"
+                                            id="state"
+                                            size={20}
+                                            maxLength={20}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                {/* Zip Code */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">Zip Code <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaAddressBook className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Zip code"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="zip"
+                                            id="zip"
+                                            size={20}
+                                            maxLength={20}
                                             required
                                         />
                                     </div>
                                 </div>
                             </div>
-                            {/* Description */}
+                            {/* Additional Comments */}
                             <div className="flex flex-col gap-2 mt-6">
                                 <p className="flex items-center justify-between">
-                                    <span className="flex gap-1 sm:text-base text-sm">Description <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
+                                    <span className="flex gap-1 sm:text-base text-sm">Additional Comments <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"></span></span>
                                 </p>
                                 <div className={clsx(
                                     "relative smooth rounded-xl overflow-hidden",
@@ -303,9 +391,9 @@ export default function FormSection() {
                                             "bg-transparent",
                                             "w-full py-4 px-8 sm:text-lg resize-none outline-none min-h-[calc(2lh+2rem)] max-h-[calc(4lh+2rem)]",
                                         )}
-                                        name="description"
+                                        name="00NHs00000whvDI"
                                         required
-                                        placeholder="Provide a description of appointment"
+                                        placeholder="Add additional comments"
                                         rows={10}
                                     ></textarea>
                                 </div>
