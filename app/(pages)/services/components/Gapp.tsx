@@ -10,7 +10,7 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function Gapp() {
     return (
         <>
-            <InViewWrapper animation={fadeIn}  className="grid place-items-center sm:py-6 py-4 relative z-10">
+            <InViewWrapper animation={fadeIn}  className="grid place-items-center sm:py-6 py-4 relative z-10 overflow-x-hidden">
                 <div>
                     <div className="mb-4 mt-10">
                         <h1 className={clsx(FontFamily.className, "sm:text-[3vw] text-4xl text-primary font-semibold")}>
@@ -18,7 +18,7 @@ export default function Gapp() {
                         </h1>
                     </div>
 
-                    <div className="flex gap-8 flex-wrap dark:mix-blend-screen mix-blend-multiply mt-12">
+                    <div className="flex gap-8 flex-wrap dark:mix-blend-screen mix-blend-multiply mt-12 ">
                         <InViewWrapper animation={cardIn} className="sm:min-w-[30rem] min-w-[20rem] flex-1">
                             <>
                                 <p className="flex flex-col gap-6">

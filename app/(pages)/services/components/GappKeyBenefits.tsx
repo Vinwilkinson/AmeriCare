@@ -15,7 +15,7 @@ const benefitsList: { title: string, content: string, count: number, svg: string
 export default function GappKeyBenefits() {
     return (
         <section className={clsx("sm:pt-10 pt-6 w-full mb-12")}>
-            <div className="flex flex-wrap gap-4 justify-center w-full perspective">
+            <div className="flex flex-wrap gap-4 justify-center w-full perspective overflow-x-hidden">
                 {benefitsList.map(({ content, count, svg, title }) => (
                     <InViewWrapper animation={count % 2 === 0 ? cardIn : cardInAlt} key={count} className="md:min-w-[30%] min-w-[20rem] rounded-xl gap-3 flex-1 flex flex-col items-center p-6 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 shadow-lg shadow-transparent hover:bg-gradient-to-r from-white/10 to-transparent hover:shadow-primary/5 border-transparent">
                         <>
