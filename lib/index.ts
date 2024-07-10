@@ -133,3 +133,22 @@ export const isIOS = (): boolean => {
     // Check for iOS devices
     return /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
 };
+
+export const formatDateForm = (dateString: string, withTime?: true ) => {
+    const date = new Date(dateString);
+
+    const pad = (n: number) => (n < 10 ? `0${n}` : n);
+
+    const month = pad(date.getMonth() + 1);
+    const day = pad(date.getDate());
+    const year = date.getFullYear();
+    let hours = date.getHours();
+    const minutes = pad(date.getMinutes());
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+
+    if(withTime) return `${month}/${day}/${year} ${hours}:${minutes} ${ampm}`;
+    
+    return `${month}/${day}/${year}`;
+};

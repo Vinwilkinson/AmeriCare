@@ -6,11 +6,14 @@ import { FaUser, FaEnvelope, FaPhone, FaStar, FaAsterisk, FaAddressBook, FaIdCar
 import arrImg from "@/lib/arrow.svg";
 import InViewWrapper from "../components/InViewWrapper";
 import { fadeIn } from "@/lib/AnimationVariants";
-import { useEffect } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { formatDateForm } from "@/lib";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function FormSection() {
+    const [formattedDate, setFormattedDate] = useState("");
+
     // useEffect(() => {
     //     const script = document.createElement('script');
     //     script.src = 'https://www.google.com/recaptcha/api.js';
@@ -217,10 +220,10 @@ export default function FormSection() {
                                             required
                                         >
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={""}>Please choose an option</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Personal Care"}>Personal Care</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Companionship"}>Companionship</option>
-                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Home Maker"}>Home Maker</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Personal Care"}>Personal Care</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Skilled Nursing"}>Skilled Nursing</option>
+                                            <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Specialty Care"}>Specialty Care</option>
                                             <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={"Other"}>Other</option>
 
                                         </select>
@@ -249,10 +252,16 @@ export default function FormSection() {
                                                 "bg-transparent appearance-none",
                                                 "w-full py-4 px-12 sm:text-lg",
                                             )}
-                                            name="00NHs00000wg50L"
-                                            id="00NHs00000wg50L"
                                             size={20}
                                             min={new Date().toISOString().slice(0, 16)}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>)=>setFormattedDate(e.target.value)}
+                                            required
+                                        />
+                                        <input
+                                            type="hidden"
+                                            name="00NHs00000wg50L"
+                                            id="00NHs00000wg50L"
+                                            value={formatDateForm(formattedDate)}
                                             required
                                         />
                                     </div>
@@ -400,7 +409,7 @@ export default function FormSection() {
                             </div>
 
                             <div className="grid gap-2 w-full mt-4">
-                                <div className="flex gap-3 items-center">
+                                {/* <div className="flex gap-3 items-center">
                                     <div className="content">
                                         <label className="checkBox">
                                             <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" />
@@ -408,11 +417,15 @@ export default function FormSection() {
                                         </label>
                                     </div>
                                     <span>Are you a New Customer?</span>
-                                </div>
+                                </div> */}
                                 <div className="flex gap-3 sm:items-center items-start">
                                     <div className="content">
                                         <label className="checkBox">
-                                            <input id="00NHs00000wg50Q" name="00NHs00000wg50Q" value={1} type="checkbox" title="By submitting this form, you agree to receive emails from AmeriCare." required />
+                                            <input 
+                                                type="checkbox" 
+                                                title="By submitting this form, you agree to receive emails from AmeriCare." 
+                                                required 
+                                            />
                                             <div className="transition"></div>
                                         </label>
                                     </div>
@@ -445,7 +458,7 @@ export default function FormSection() {
                                 >
                                     <span>
                                         <span className="flex gap-2 items-center justify-center">
-                                            Submit
+                                            Book Appointment
                                         </span>
                                     </span>
                                 </button>
