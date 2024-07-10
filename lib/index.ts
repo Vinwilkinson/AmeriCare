@@ -35,7 +35,8 @@ export function isValidPhone(phone: string): boolean {
   
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     return phoneRegex.test(phone);
-  }
+}
+
 
 export function splitText(text: string) {
     const separators = /[\s.,;:!?(){}\[\]<>\/\\@#$%^&*_\-+=|~]+/;
@@ -148,7 +149,7 @@ export const formatDateForm = (dateString: string, withTime?: true ) => {
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
 
-    if(withTime) return `${month}/${day}/${year} ${hours}:${minutes}, ${ampm}`;
+    if(withTime) return `${month}/${day}/${year}, ${hours}:${minutes} ${ampm}`;
     
     return `${month}/${day}/${year}`;
 };
