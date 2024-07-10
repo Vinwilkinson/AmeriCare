@@ -261,7 +261,7 @@ export default function FormSection() {
                                             type="hidden"
                                             name="00NHs00000wg50L"
                                             id="00NHs00000wg50L"
-                                            value={formatDateForm(formattedDate)}
+                                            value={formatDateForm(formattedDate, true)}
                                             required
                                         />
                                     </div>
@@ -418,18 +418,8 @@ export default function FormSection() {
                                     </div>
                                     <span>Are you a New Customer?</span>
                                 </div> */}
-                                <div className="flex gap-3 sm:items-center items-start">
-                                    <div className="content">
-                                        <label className="checkBox">
-                                            <input 
-                                                type="checkbox" 
-                                                title="By submitting this form, you agree to receive emails from AmeriCare." 
-                                                required 
-                                            />
-                                            <div className="transition"></div>
-                                        </label>
-                                    </div>
-                                    <span>By submitting this form, you agree to receive emails from AmeriCare.</span>
+                                <div className="flex gap-3 sm:items-center items-start opacity-90">
+                                    By submitting this form, you agree to receive emails from AmeriCare.
                                 </div>
                             </div>
 
