@@ -84,6 +84,10 @@ export default function FooterSection() {
                             </Link>
                         </div>
                     </div>
+
+                    <div className="flex py-6 border-t border-t-white/25 text-base max-md:text-sm justify-center">
+                        <p>You&apos;ll receive AmeriCare Services Inc. updates about 6 times per year. Instantly unsubscribe via a link in any email. <Link className="text-primary" href={"/policy"}>See our Privacy Policy</Link>.</p>
+                    </div>
                 </>
             </InViewWrapper>
         </div>
