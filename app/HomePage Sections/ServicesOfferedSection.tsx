@@ -21,7 +21,7 @@ interface SectionProp {
 
 export default function ServicesOfferedSection({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }: SectionProp) {
     return (
-        <div className="dark:bg-darkBg sm:py-12 py-6 dark:text-white bg-white relative 2xl:box-border box-content sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[70rem] z-20">
+        <div className="dark:bg-darkBg sm:py-12 py-6 dark:text-white bg-white relative 2xl:box-border box-content sm:min-h-[100vh] md:max-h-[70rem] z-20">
             <InViewWrapper animation={fadeIn}>
                 <Image
                     src={"https://americare.sirv.com/icons/bbblurry.svg"}
