@@ -390,7 +390,7 @@ export default function FormSection() {
                                             <div className="transition"></div>
                                         </label>
                                     </div>
-                                    <span>By checking this box and submitting this form, you agree to receive emails from AmeriCare.</span>
+                                    <span>By checking this box, I agree to receive text messages from AmeriCARE Services Inc. Consent is not a condition of any purchase. Message and data rates may apply.</span>
                                 </div>
                             </div>
 
