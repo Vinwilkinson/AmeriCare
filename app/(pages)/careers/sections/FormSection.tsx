@@ -571,6 +571,18 @@ export default function FormSection() {
                                 ></textarea>
                             </div>
                         </div>
+                        {/* Agree to receiving emails */}
+                        <div className="grid gap-2 w-full mt-4">
+                            <div className="flex gap-3 items-center">
+                                <div className="content">
+                                    <label className="checkBox">
+                                        <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" required />
+                                        <div className="transition"></div>
+                                    </label>
+                                </div>
+                                <span>By checking this box and submitting this form, you agree to receive emails from AmeriCare.</span>
+                            </div>
+                        </div>
                         {/* Submit button */}
                         {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
                             <button

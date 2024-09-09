@@ -362,9 +362,16 @@ export default function FormSection() {
                                 </div>
                             </div>
 
+                            {/* Agree to receiving emails */}
                             <div className="grid gap-2 w-full mt-4">
-                                <div className="flex gap-3 sm:items-center items-start opacity-90">
-                                    By submitting this form, you agree to receive emails from AmeriCare.
+                                <div className="flex gap-3 items-center">
+                                    <div className="content">
+                                        <label className="checkBox">
+                                            <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" required />
+                                            <div className="transition"></div>
+                                        </label>
+                                    </div>
+                                    <span>By checking this box and submitting this form, you agree to receive emails from AmeriCare.</span>
                                 </div>
                             </div>
 

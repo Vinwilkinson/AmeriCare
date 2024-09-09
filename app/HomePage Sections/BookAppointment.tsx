@@ -14,33 +14,6 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function FormSection() {
     const [formattedDate, setFormattedDate] = useState("");
 
-    // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = 'https://www.google.com/recaptcha/api.js';
-    //     script.async = true;
-    //     script.defer = true;
-    //     document.body.appendChild(script);
-    
-    //     const timestampScript = document.createElement('script');
-    //     timestampScript.innerHTML = `
-    //       function timestamp() {
-    //         var response = document.getElementById("g-recaptcha-response");
-    //         if (response == null || response.value.trim() == "") {
-    //           var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-    //           elems["ts"] = JSON.stringify(new Date().getTime());
-    //           document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-    //         }
-    //       }
-    //       setInterval(timestamp, 500);
-    //     `;
-    //     document.body.appendChild(timestampScript);
-    
-    //     return () => {
-    //       document.body.removeChild(script);
-    //       document.body.removeChild(timestampScript);
-    //     };
-    //   }, []);
-
     return (
         <>
             <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHs000008mYi7" method="POST" className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40">
@@ -408,18 +381,16 @@ export default function FormSection() {
                                 </div>
                             </div>
 
+                            {/* Agree to receiving emails */}
                             <div className="grid gap-2 w-full mt-4">
-                                {/* <div className="flex gap-3 items-center">
+                                <div className="flex gap-3 items-center">
                                     <div className="content">
                                         <label className="checkBox">
-                                            <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" />
+                                            <input id="00NHs00000wg4zr" name="00NHs00000wg4zr" value={1} type="checkbox" title="New Customer?" required />
                                             <div className="transition"></div>
                                         </label>
                                     </div>
-                                    <span>Are you a New Customer?</span>
-                                </div> */}
-                                <div className="flex gap-3 sm:items-center items-start opacity-90">
-                                    By submitting this form, you agree to receive emails from AmeriCare.
+                                    <span>By checking this box and submitting this form, you agree to receive emails from AmeriCare.</span>
                                 </div>
                             </div>
 
