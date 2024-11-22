@@ -86,7 +86,13 @@ export default function FooterSection() {
                     </div>
 
                     <div className="flex py-6 border-t border-t-white/25 text-base max-md:text-sm justify-center">
-                        <p>You&apos;ll receive AmeriCare Services Inc. updates about 6 times per year. Instantly unsubscribe via a link in any email. <Link className="text-primary" href={"/policy"}>See our Privacy Policy</Link>.</p>
+                        <p className="flex items-center justify-between">
+                            <span>Designed by: <Link href={"https://fabiconcept.online/"} className="text-primary">Fabiconcept</Link></span>
+                            <span>
+                                See our{" "} 
+                                <Link className="text-primary" href={"/policy"}>Privacy Policy</Link>.
+                            </span>
+                        </p>
                     </div>
                 </>
             </InViewWrapper>
