@@ -86,7 +86,7 @@ export default function FooterSection() {
                     </div>
 
                     <div className="flex py-6 border-t border-t-white/25 text-base max-md:text-sm justify-center">
-                        <p className="flex items-center justify-between">
+                        <p className="flex items-center justify-between w-full">
                             <span>Designed by: <Link href={"https://fabiconcept.online/"} className="text-primary">Fabiconcept</Link></span>
                             <span>
                                 See our{" "} 
