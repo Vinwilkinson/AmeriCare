@@ -31,15 +31,15 @@ export const MeetTeamList:TeamMember[] = [
         id: "31295d8a-337c-582a-bdd5-2622c682e1b0"
     },
     {
-        name:"Caden Gerard",
+        name:"Paul Valenzuela",
         role:"Marketing Manager",
-        photo:"https://americare.sirv.com/team/Jaime%20Rodriguez.JPG",
+        photo:"https://americare.sirv.com/team/PHOTO-2025-12-18-09-04-17.jpg",
         id: "31295d8a-337c-582a-bdd5-2622c682e1b0"
     },
     {
-        name:"Adriana Rodriguez",
-        role:"Human Relation Manager",
-        photo:"https://americare.sirv.com/team/Human%20Relation%20Manager%20-%20Adriana%20Rodriguez.jpg",
+        name:"Yveth San Luis",
+        role:"Human Relations Manager",
+        photo:"https://americare.sirv.com/team/PHOTO-2025-12-17-17-02-13.jpg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
@@ -55,9 +55,9 @@ export const MeetTeamList:TeamMember[] = [
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
-        name:"Erica Taylor",
+        name:"Karen June Cioco",
         role:"Customer Care Manager",
-        photo:"https://americare.sirv.com/team/calm-smiling-mature-woman-portra.jpg",
+        photo:"https://americare.sirv.com/team/PHOTO-2025-12-17-15-59-48.jpg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
