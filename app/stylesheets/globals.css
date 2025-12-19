@@ -34,6 +34,12 @@ img {
   scroll-behavior: smooth;
 }
 
+.group:hover .special-text {
+  background-color: #6fad45;
+  color: #fff;
+  text-shadow: 0px 0.1em #000;
+}
+
 .smooth-after::after {
   transition: 0.25s ease;
 }
