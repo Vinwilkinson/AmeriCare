@@ -47,7 +47,7 @@ export default function FooterSection() {
                         <div className="max-w-md flex flex-col gap-4">
                             <div className="flex flex-col gap-2">
                                 <span className="font-semibold">Address</span>
-                                <span className="opacity-80">1755 E Park Place Blvd Stone Mountain, GA 30087</span>
+                                <span className="opacity-80">2950 Cherokee St, NW Suite 626, Kennesaw, GA 30144</span>
                             </div>
 
                             <div>
