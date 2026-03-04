@@ -39,11 +39,11 @@ export const MeetTeamList:TeamMember[] = [
     {
         name:"Yveth San Luis",
         role:"Human Relations Manager",
-        photo:"https://americare.sirv.com/team/PHOTO-2025-12-17-17-02-13.jpg",
+        photo:"https://americare.sirv.com/team/5b99b7b7-e4f5-4921-9deb-a2594aee8dd3.JPG",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
-        name:"Jack Duma",
+        name:"Brittany Sanders",
         role:"Vice President of Operations",
         photo:"https://americare.sirv.com/team/handsome-latino-businessman-lean-transformed.jpeg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"

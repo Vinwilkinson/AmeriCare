@@ -2,7 +2,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import CustomBtn from "./CustomBtn";
 import Link from "next/link";
-import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { FaMailBulk, FaPhoneSquareAlt } from "react-icons/fa";
 import { fadeIn } from "@/lib/AnimationVariants";
 import InViewWrapper from "./InViewWrapper";
@@ -70,16 +70,16 @@ export default function FooterSection() {
                         </div>
 
                         <div className="grid sm:grid-cols-1 gap-3 sm:min-w-fit min-w-full grid-cols-4 text-white">
-                            <Link href={"#"} className="grid place-items-center">
+                            <Link href={"https://facebook.com/AmeriCareHealthServices"} target="_blank" className="grid place-items-center">
                                 <FaFacebookF className="text-3xl hover:text-primary" />
                             </Link>
-                            <Link href={"#"} className="grid place-items-center">
+                            <Link href={"https://linkedin.com/company/americare-health-inc"} target="_blank" className="grid place-items-center">
                                 <FaLinkedin className="text-3xl hover:text-primary" />
                             </Link>
-                            <Link href={"#"} className="grid place-items-center">
-                                <FaMailBulk className="text-3xl hover:text-primary" />
+                            <Link href={"https://www.instagram.com/americarehealth"} target="_blank" className="grid place-items-center">
+                                <FaInstagram className="text-3xl hover:text-primary" />
                             </Link>
-                            <Link href={"#"} className="grid place-items-center">
+                            <Link href={"tel:4044942187"} className="grid place-items-center">
                                 <FaPhoneSquareAlt className="text-3xl hover:text-primary" />
                             </Link>
                         </div>
@@ -89,7 +89,7 @@ export default function FooterSection() {
                         <p className="flex items-center justify-between w-full">
                             <span>Designed by: <Link href={"https://fabiconcept.online/"} className="text-primary">Fabiconcept</Link></span>
                             <span>
-                                See our{" "} 
+                                See our{" "}
                                 <Link className="text-primary" href={"/policy"}>Privacy Policy</Link>.
                             </span>
                         </p>
