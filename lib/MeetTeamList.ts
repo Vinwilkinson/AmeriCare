@@ -9,19 +9,19 @@ export const MeetTeamList:TeamMember[] = [
     {
         name:"Calvin Wilkinson MPH",
         role:"Chief Executive Officer - (CEO)",
-        photo:"https://americare.sirv.com/team/89cdd9fd-773c-470b-941e-e221a5a83376.JPG",
+        photo:"https://americare.sirv.com/team/Calvin%20Headshot_2.jpg",
         id: "c15fdb72-c118-5d87-8d81-ecddb582ae51"
     },
     {
         name:"Christine Regis RN",
         role:"Nursing Supervisor",
-        photo:"https://americare.sirv.com/team/imrs.php%20(1).jpg",
+        photo:"https://americare.sirv.com/team/00011_Christine%20Calvin'smom47.jpg",
         id: "39a93612-7b83-5d1b-9d5c-095e297a839a"
     },
     {
         name:"Chris Wilkinson",
         role:"Vice President of Business Development",
-        photo:"https://americare.sirv.com/team/4f8fa970-d8a9-4cff-b69b-eb92b9a12fad.JPG",
+        photo:"https://americare.sirv.com/team/00002_Chris%20Wilkinson%20(Calvin%20s%20brother)%20_28%20copy.jpg",
         id: "29169592-bd7d-5275-abaf-12c0046f620c"
     },
     {

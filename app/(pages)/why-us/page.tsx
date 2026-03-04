@@ -1,5 +1,5 @@
 import TopSection from "./sections/TopSection";
-import AboutUsSection from "./sections/AboutUsSection";
+// import AboutUsSection from "./sections/AboutUsSection";
 import OurMissionSection from "./sections/OurMissionSection";
 import MeetTeamSection from "./sections/MeetTeamSection";
 import OurVisionSection from "./sections/OurVisionSection";
