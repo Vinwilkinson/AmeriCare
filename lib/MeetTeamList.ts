@@ -44,7 +44,7 @@ export const MeetTeamList:TeamMember[] = [
     },
     {
         name:"Brittany Sanders",
-        role:"Vice President of Operations",
+        role:"Administrative Manager",
         photo:"https://americare.sirv.com/team/5b99b7b7-e4f5-4921-9deb-a2594aee8dd3.JPG",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
