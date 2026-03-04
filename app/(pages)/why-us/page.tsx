@@ -19,7 +19,7 @@ export default function WhyUsPage() {
             <div className="relative z-10">
                 <TopSection />
                 <OurProcessSection />
-                <AboutUsSection />
+                {/* <AboutUsSection /> */}
                 <MeetTeamSection />
                 <OurMissionSection />
                 <OurVisionSection />
