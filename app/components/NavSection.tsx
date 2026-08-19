@@ -55,7 +55,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             width={300}
                             priority
                             className={clsx(
-                                "sm:w-16 w-16 smooth",
+                                "sm:w-12 w-12 smooth",
                             )}
                         />
                         <span className="sm:text-3xl text-xl md:block sm:hidden block">AmeriCare</span>
@@ -85,20 +85,13 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             "2xl:px-7 px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
                             pathname === "/careers" ? ("font-semibold rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                         )} href={"/careers"}>Career</Link>
+                        <Link className={clsx(
+                            "2xl:px-7 px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
+                            pathname === "/resources" ? ("font-semibold rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
+                        )} href={"/resources"}>Resources</Link>
                     </div>
 
                     <div className="flex justify-end gap-3 items-center">
-                        <CustomBtn
-                            text="404-494-2187"
-                            linkHref="tel:4044942187"
-                            noBorder={true}
-                            inHero={variation === "home"}
-                            icon={(<FaPhone />)}
-                            customClass={clsx(
-                                inViewContainer ? "border-transparent outline-black text-black" : "",
-                                "max-lg:hidden"
-                            )}
-                        />
                         <CustomBtn
                             text="Book an Appointment"
                             linkHref="/book-an-appointment"
@@ -161,6 +154,10 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         "px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
                         pathname === "/careers" ? ("font-semibold rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/careers"}>Career</Link>
+                    <Link className={clsx(
+                        "px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
+                        pathname === "/resources" ? ("font-semibold rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
+                    )} href={"/resources"}>Resources</Link>
                 </div>
             </motion.div>
         </>
