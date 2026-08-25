@@ -12,7 +12,8 @@ export default function ResourceCards() {
             description: "Take our quick Parent Caregiver Scorecard to understand where you are in your caregiving journey and receive personalized resources based on your current needs.",
             meta: "Takes about 2 minutes.",
             cta: "TAKE THE SCORECARD",
-            href: "/scorecard",
+            href: "https://family-support-score.lovable.app/parents",
+            external: true,
             icon: <FaClipboardCheck className="text-4xl text-primary" />,
             animation: cardIn
         },
@@ -22,7 +23,8 @@ export default function ResourceCards() {
             description: "Get practical guidance from nurses, care experts, and community professionals on topics that matter to families caring for children with complex needs.",
             meta: "Free - Online - New topic every month",
             cta: "RESERVE YOUR SPOT",
-            href: "/webinar",
+            href: "https://family-support-score.lovable.app/webinar",
+            external: true,
             icon: <FaVideo className="text-4xl text-primary" />,
             animation: cardInAlt
         },
@@ -47,7 +49,7 @@ export default function ResourceCards() {
                         animation={card.animation} 
                         className={index === 1 ? "sm:translate-y-6" : ""}
                     >
-                        <Link href={card.href} className="block h-full">
+                        <Link href={card.href} target={card.external ? "_blank" : undefined} rel={card.external ? "noopener noreferrer" : undefined} className="block h-full">
                             <div className="h-full flex flex-col shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg bg-white border border-primary/10 dark:border-white/10 rounded-[24px] overflow-hidden cursor-pointer">
                                 <div className="py-6 px-8 border-b border-dashed border-primary/25 dark:border-white/10 bg-primary/5 backdrop-blur flex items-center gap-4">
                                     {card.icon}
