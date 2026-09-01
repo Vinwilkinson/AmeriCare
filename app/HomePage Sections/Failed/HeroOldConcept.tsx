@@ -109,7 +109,7 @@ export default function HeroSection() {
                                     className="absolute sm:bottom-2 -bottom-3 sm:left-6 left-1 w-14"
                                 />
                                 <p className="md:text-[2vw] text-[3.25vw] mt-2 md:ml-0 ml-4 sm:translate-x-20 flex w-fit flex-col">
-                                    <span className="opacity-60">Compassionate Care, Right at Home</span>
+                                    <span className="opacity-60">Consistently Kind, Every Time</span>
                                     <span className="opacity-60">With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
                             </div>

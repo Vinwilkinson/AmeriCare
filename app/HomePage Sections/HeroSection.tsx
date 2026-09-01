@@ -83,8 +83,8 @@ export default function HeroSection() {
 
         <div className="relative sm:min-h-[calc(48vh)] min-h-[calc(100vh-10rem)] max-w-[1400px] my-0 mx-auto py-0 px-[3em] flex flex-col items-center z-30 justify-center text-center">
           <span className={clsx(FontFamily.className, "2xl:text-5xl sm:text-4xl text-2xl drop-shadow-md opacity-80")}>AmeriCare</span>
-          <span className="pt-2 pb-1 2xl:text-7xl sm:text-5xl text-4xl drop-shadow-md font-semibold">Compassionate Care, Right at Home.</span>
-          <span className="2xl:text-2xl mb-10 sm:text-xl text-lg opacity-60 drop-shadow-md">With AmeriCare, You&apos;ll Never Walk Alone</span>
+          <span className="pt-2 pb-1 2xl:text-7xl sm:text-5xl text-4xl drop-shadow-md font-semibold">Consistently Kind, Every Time.</span>
+          <span className="2xl:text-2xl mb-10 sm:text-xl text-lg opacity-60 drop-shadow-md">Compassionate Care, Right at Home</span>
           <CustomBtn
             linkHref="/book-an-appointment"
             text="Book an Appointment"

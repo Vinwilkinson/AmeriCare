@@ -63,7 +63,7 @@ export default function HeroSection() {
                                 className="relative delay-75 smooth"
                             >
                                 <p className="md:text-[2vw] text-2xl md:ml-0 flex w-fit flex-col sm:gap-1">
-                                    <span>Compassionate Care, Right at Home</span>
+                                    <span>Consistently Kind, Every Time</span>
                                     <span>With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
                             </div>

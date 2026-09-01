@@ -20,7 +20,7 @@ export default function OurCaregivers() {
                     <InViewWrapper animation={fadeIn} className="mb-12">
                         <>
                             <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Caregivers</h1>
-                            <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home</p>
+                            <p className="opacity-60 text-[0.97rem] font-semibold">Consistently Kind, Every Time</p>
                         </>
                     </InViewWrapper>
 
