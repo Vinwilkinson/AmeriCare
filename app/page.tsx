@@ -9,6 +9,7 @@ import FormSection from "./HomePage Sections/FormSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 import OurServiceMiniSection from "./HomePage Sections/OurServiceMiniSection";
 import { Toaster } from "react-hot-toast";
+import ResourceCards from "./(pages)/resources/components/ResourceCards";
 
 
 export default function page() {
@@ -26,6 +27,7 @@ export default function page() {
                 }
             />
             <HeroSection />
+            <ResourceCards />
             <OurServiceMiniSection />
             <OurServicesSection />
             <MottoSection />
