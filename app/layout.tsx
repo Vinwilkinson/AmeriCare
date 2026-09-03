@@ -4,6 +4,7 @@ import "./stylesheets/globals.css";
 import "./stylesheets/animations.css";
 import clsx from "clsx";
 import FooterSection from "./components/FooterSection";
+import Chatbot from "./components/Chatbot";
 import NextTopLoader from 'nextjs-toploader';
 import { generalMetadata } from "@/lib/MetaData";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
             <body className={clsx(FontFamily.className, "overflow-x-hidden sm:text-base text-sm dark:bg-darkBg bg-white")}>
                 <NextTopLoader color="#000" />
                 {children}
+                <Chatbot />
                 <FooterSection />
             </body>
         </html>
