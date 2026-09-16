@@ -6,3 +6,4 @@
 - Careers
 - Services
 - Contact us
+- Resources
