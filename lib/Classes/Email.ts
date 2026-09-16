@@ -5,7 +5,7 @@ export class BrevoEmailClient {
     private readonly apiKey: string;
 
     constructor() {
-        this.apiKey = process.env.NEXT_PUBLIC_SMTP_API!;
+        this.apiKey = process.env.BREVO_API_KEY!;
     }
 
     async sendEmail(

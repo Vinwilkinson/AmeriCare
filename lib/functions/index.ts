@@ -1,5 +1,5 @@
-export const clientId = process.env.NEXT_PUBLIC_SIRV_ClIENT_ID!;
-export const clientSecret = process.env.NEXT_PUBLIC_SIRV_ClIENT_SECRET!;
+export const clientId = process.env.SIRV_CLIENT_ID!;
+export const clientSecret = process.env.SIRV_CLIENT_SECRET!;
 
 interface TokenResponse {
     token: string;
