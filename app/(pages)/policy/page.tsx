@@ -1,5 +1,9 @@
 import NavigationComponent from "@/app/components/NavSection";
+import { generalMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {...generalMetadata, title: "Privacy Policy | AmeriCare Atlanta"};
 
 export default function PolicyPage() {
     return (

@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            // disallow: '/private/',
+            disallow: ['/thank-you', '/parallax'],
         },
         sitemap: 'https://americareinhome.com/sitemap.xml',
     }
