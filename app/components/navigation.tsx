@@ -5,7 +5,7 @@ import { useAnimation, Variants, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Macondo } from "next/font/google";
-import DisappearingComponent from "./DisappearingComponent ";
+import DisappearingComponent from "./DisappearingComponent";
 import Link from "next/link";
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
