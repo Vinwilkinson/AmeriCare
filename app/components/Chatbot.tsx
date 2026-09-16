@@ -5,8 +5,8 @@ import { DunefoxChatbot } from 'dunefox-chatbot/react';
 export default function Chatbot() {
   return (
     <DunefoxChatbot
-      tenantId="ijdfeitvuHVnmwa6zLRUtTwUZAH2"
-      configId="cmtlcz35p02xcs601dvxwz0z8"
-    />
+        tenantId="rCuTWcdp3MYh2MTtikvO6Vytvb53"
+        configId="cmu429xa303r6s601vy0g4nmr"
+      />
   );
 }
