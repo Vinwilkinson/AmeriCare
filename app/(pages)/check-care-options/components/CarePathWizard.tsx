@@ -225,7 +225,7 @@ export default function CarePathWizard() {
                 body: JSON.stringify(formData),
             });
             if (!res.ok) throw new Error("Submission failed");
-            router.push("/check-care-options/confirmation");
+            router.push("/check-care-options/confirmation?submitted=1");
         } catch {
             toast.error("Something went wrong. Please try again or call us at (404) 494-2187.");
             setSubmitting(false);

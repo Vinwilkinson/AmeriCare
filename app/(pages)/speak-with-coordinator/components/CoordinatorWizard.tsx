@@ -48,7 +48,7 @@ export default function CoordinatorWizard() {
                 body: JSON.stringify(formData),
             });
             if (!res.ok) throw new Error("Submission failed");
-            router.push("/speak-with-coordinator/confirmation");
+            router.push("/speak-with-coordinator/confirmation?submitted=1");
         } catch {
             toast.error("Something went wrong. Please try again or call us at (404) 494-2187.");
             setSubmitting(false);
