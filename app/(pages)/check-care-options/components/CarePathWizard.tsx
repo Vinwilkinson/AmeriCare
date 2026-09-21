@@ -238,6 +238,7 @@ export default function CarePathWizard() {
 
     return (
         <InViewWrapper animation={fadeIn} className="dark:bg-darkBg dark:text-white py-16 sm:px-[8vw] px-6 relative z-40">
+            <>
             <div className="max-w-2xl mx-auto mb-8">
                 <div className="flex items-center justify-between mb-4">
                     <span className="text-sm opacity-60">Step {flowStep + 1} of {steps.length}</span>
@@ -349,6 +350,7 @@ export default function CarePathWizard() {
                     </button>
                 </div>
             </div>
+            </>
         </InViewWrapper>
     );
 }
