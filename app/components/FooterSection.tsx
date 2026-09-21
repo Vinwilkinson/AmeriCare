@@ -36,9 +36,10 @@ export default function FooterSection() {
                             />
                             <CustomBtn
                                 customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
-                                linkHref="/book-an-appointment"
+                                linkHref="tel:4044942187"
                                 noBorder={true}
-                                text="Book an Appointment"
+                                external
+                                text="Speak with Coordinator"
                             />
                         </div>
                     </div>

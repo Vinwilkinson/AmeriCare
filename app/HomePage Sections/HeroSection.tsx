@@ -85,13 +85,21 @@ export default function HeroSection() {
           <span className={clsx(FontFamily.className, "2xl:text-5xl sm:text-4xl text-2xl drop-shadow-md opacity-80")}>AmeriCare</span>
           <span className="pt-2 pb-1 2xl:text-7xl sm:text-5xl text-4xl drop-shadow-md font-semibold">Consistently Kind, Every Time</span>
           <span className="2xl:text-2xl mb-10 sm:text-xl text-lg opacity-60 drop-shadow-md">Compassionate Care, Right at Home</span>
-          <CustomBtn
-            linkHref="/book-an-appointment"
-            text="Book an Appointment"
-            noBorder
-            inHero
-            customClass="sm:py-5 py-4"
-          />
+          <div className="flex gap-3 flex-wrap justify-center">
+            <CustomBtn
+              linkHref="/check-care-options"
+              text="Check Care Options"
+              noBorder
+              inHero
+              customClass="sm:py-5 py-4"
+            />
+            <CustomBtn
+              linkHref="/speak-with-coordinator"
+              text="Speak With a Coordinator"
+              noBorder
+              customClass="sm:py-5 py-4 after:bg-transparent text-primary border-primary hover:text-white hover:border-transparent"
+            />
+          </div>
         </div>
         <div className="absolute top-[-0.1%] left-0 w-full h-[100.2%] z-10 bg-green-800/25"></div>
       </div>
