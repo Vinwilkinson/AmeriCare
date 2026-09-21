@@ -15,6 +15,7 @@ export default function FooterSection() {
         )}>
             <InViewWrapper animation={fadeIn} className="pt-12 pb-6 sm:px-[5vw] px-4 bg-themeBlack sm:rounded-t-[3rem] rounded-t-3xl">
                 <>
+                    {/* Top row: Logo + CTAs */}
                     <div className="border-b border-b-white/25 pb-6 flex flex-wrap justify-between gap-4 items-center">
                         <Image
                             src={"https://americare.sirv.com/icons/logo-png.png"}
@@ -22,12 +23,9 @@ export default function FooterSection() {
                             height={300}
                             width={300}
                             priority
-                            className={clsx(
-                                "w-44 sm:-ml-6 smooth sm:mx-0 mx-auto",
-                            )}
+                            className="w-44 smooth"
                         />
-
-                        <div className="flex gap-2 sm:mx-0 mx-auto">
+                        <div className="flex gap-2">
                             <CustomBtn
                                 customClass="bg-black/10"
                                 linkHref="/careers"
@@ -44,67 +42,72 @@ export default function FooterSection() {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap-reverse py-6 gap-8 justify-between">
-                        {/* Contact info */}
-                        <div className="max-w-md flex flex-col gap-4">
+                    {/* Middle row: Contact + Link columns */}
+                    <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-8">
+                        {/* Contact info — left side */}
+                        <div className="md:col-span-4 flex flex-col gap-4">
                             <div className="flex flex-col gap-2">
                                 <span className="font-semibold">Address</span>
-                                <span className="opacity-80">2950 Cherokee St, NW Suite 626, Kennesaw, GA 30144</span>
+                                <span className="opacity-80 leading-relaxed">2950 Cherokee St, NW Suite 626, Kennesaw, GA 30144</span>
                             </div>
-                            <div>
-                                <span className="mt-6 flex gap-1 group items-end flex-wrap">
-                                    <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-primary" />
-                                    Call <Link className="text-primary" href={"tel:4044942187"}>(404)-494-2187</Link> <span className="whitespace-normal">For A Free Consultation!</span>
+                            <div className="flex flex-col gap-2">
+                                <span className="flex gap-2 items-center">
+                                    <FaPhoneSquareAlt className="text-2xl smooth group-hover:text-primary shrink-0" />
+                                    Call <Link className="text-primary" href={"tel:4044942187"}>(404)-494-2187</Link> for a free consultation
                                 </span>
-                                <span className="mt-3 flex gap-1 group items-end">
-                                    <FaMailBulk className="text-3xl smooth group-hover:text-primary" />
-                                    Email: <Link className="text-primary" href={"mailto:support@americareinhome.com"}>support@americareinhome.com</Link>.
+                                <span className="flex gap-2 items-center">
+                                    <FaMailBulk className="text-2xl smooth group-hover:text-primary shrink-0" />
+                                    <Link className="text-primary" href={"mailto:support@americareinhome.com"}>support@americareinhome.com</Link>
                                 </span>
                             </div>
-                            <div className="grid sm:grid-cols-1 gap-3 sm:min-w-fit min-w-full grid-cols-4 text-white mt-2">
-                                <Link href={"https://facebook.com/AmeriCareHealthServices"} target="_blank" className="grid place-items-center">
-                                    <FaFacebookF className="text-3xl hover:text-primary" />
+                            <div className="flex gap-4 mt-2">
+                                <Link href={"https://facebook.com/AmeriCareHealthServices"} target="_blank">
+                                    <FaFacebookF className="text-2xl hover:text-primary smooth" />
                                 </Link>
-                                <Link href={"https://linkedin.com/company/americare-health-inc"} target="_blank" className="grid place-items-center">
-                                    <FaLinkedin className="text-3xl hover:text-primary" />
+                                <Link href={"https://linkedin.com/company/americare-health-inc"} target="_blank">
+                                    <FaLinkedin className="text-2xl hover:text-primary smooth" />
                                 </Link>
-                                <Link href={"https://www.instagram.com/americarehealth"} target="_blank" className="grid place-items-center">
-                                    <FaInstagram className="text-3xl hover:text-primary" />
+                                <Link href={"https://www.instagram.com/americarehealth"} target="_blank">
+                                    <FaInstagram className="text-2xl hover:text-primary smooth" />
                                 </Link>
-                                <Link href={"tel:4044942187"} className="grid place-items-center">
-                                    <FaPhoneSquareAlt className="text-3xl hover:text-primary" />
+                                <Link href={"tel:4044942187"}>
+                                    <FaPhoneSquareAlt className="text-2xl hover:text-primary smooth" />
                                 </Link>
                             </div>
                         </div>
 
-                        {/* Care */}
-                        <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
-                            <span className="font-semibold text-white/60 text-sm uppercase tracking-wider mb-1">Care</span>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services">Services</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/check-care-options">Check Care Options</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/speak-with-coordinator">Speak with Coordinator</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/book-an-appointment">Book an Appointment</Link>
-                        </div>
+                        {/* Link columns — right side */}
+                        <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                            {/* Care */}
+                            <div className="flex flex-col gap-3">
+                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">Care</span>
+                                <Link className="hover:text-primary smooth" href="/services">Services</Link>
+                                <Link className="hover:text-primary smooth" href="/check-care-options">Check Care Options</Link>
+                                <Link className="hover:text-primary smooth" href="/speak-with-coordinator">Speak with Coordinator</Link>
+                                <Link className="hover:text-primary smooth" href="/book-an-appointment">Book an Appointment</Link>
+                            </div>
 
-                        {/* About */}
-                        <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
-                            <span className="font-semibold text-white/60 text-sm uppercase tracking-wider mb-1">About</span>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/why-us">Why AmeriCare</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/testimonials">Testimonials</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/resources">Resources</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/careers">Careers</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/policy">Privacy Policy</Link>
-                        </div>
+                            {/* About */}
+                            <div className="flex flex-col gap-3">
+                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">About</span>
+                                <Link className="hover:text-primary smooth" href="/why-us">Why AmeriCare</Link>
+                                <Link className="hover:text-primary smooth" href="/testimonials">Testimonials</Link>
+                                <Link className="hover:text-primary smooth" href="/resources">Resources</Link>
+                                <Link className="hover:text-primary smooth" href="/careers">Careers</Link>
+                                <Link className="hover:text-primary smooth" href="/policy">Privacy Policy</Link>
+                            </div>
 
-                        {/* Programs */}
-                        <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
-                            <span className="font-semibold text-white/60 text-sm uppercase tracking-wider mb-1">Programs</span>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#gapp">GAPP</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#ccsp">CCSP</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#source">SOURCE</Link>
+                            {/* Programs */}
+                            <div className="flex flex-col gap-3">
+                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">Programs</span>
+                                <Link className="hover:text-primary smooth" href="/services#gapp">GAPP</Link>
+                                <Link className="hover:text-primary smooth" href="/services#ccsp">CCSP</Link>
+                                <Link className="hover:text-primary smooth" href="/services#source">SOURCE</Link>
+                            </div>
                         </div>
                     </div>
 
+                    {/* Bottom bar */}
                     <div className="flex py-6 border-t border-t-white/25 text-base max-md:text-sm justify-center">
                         <p className="flex items-center justify-between w-full">
                             <span>Designed by: <Link href={"https://fabiconcept.online/"} className="text-primary">Fabiconcept</Link></span>
