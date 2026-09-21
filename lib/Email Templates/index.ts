@@ -297,15 +297,21 @@ interface CarePathLeadParams {
     lastName: string;
     email: string;
     phone: string;
-    careType: string;
-    serviceNeeded: string;
-    location: string;
+    audience: string;
+    need: string;
+    coverage: string;
+    status: string;
+    zip: string;
+    timeline: string;
+    relationship: string;
+    preference: string[];
     additionalNotes: string;
 }
 
-export const carePathLead = ({ firstName, lastName, email, phone, careType, serviceNeeded, location, additionalNotes }: CarePathLeadParams) => {
+export const carePathLead = ({ firstName, lastName, email, phone, audience, need, coverage, status, zip, timeline, relationship, preference, additionalNotes }: CarePathLeadParams) => {
     const username = `${firstName} ${lastName}`;
-    const careTypeLabel = careType === "child" ? "Child / Pediatric" : "Adult / Senior";
+    const audienceLabel = audience === "pediatric" ? "Child / Pediatric" : "Adult / Senior";
+    const prefLabels = preference.map(p => p === "call" ? "Phone call" : p === "text" ? "Text message" : "Email").join(", ");
 
     return (`
         <html>
@@ -314,66 +320,16 @@ export const carePathLead = ({ firstName, lastName, email, phone, careType, serv
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
                 <style>
-                    body {
-                        font-family: "Quicksand", sans-serif;
-                        font-optical-sizing: auto;
-                        font-weight: 500;
-                        font-style: normal;
-                        background-color: #eee;
-                        color: #000;
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        min-height: 100vh;
-                    }
-                    .container {
-                        width: 100%;
-                        max-width: 600px;
-                        padding: 1rem;
-                        background-color: #fff;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    }
-                    .header {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding-bottom: 1rem;
-                        border-bottom: 1px solid #444;
-                    }
-                    .header img {
-                        height: 60px;
-                    }
-                    .content {
-                        padding: 2rem 1rem;
-                    }
-                    .content p {
-                        font-size: 1rem;
-                        text-align: left;
-                        margin: 0;
-                    }
-                    .details {
-                        font-size: 1rem;
-                        line-height: 1.5;
-                    }
-                    .details p {
-                        margin: 0.5rem 0;
-                    }
-                    .details b {
-                        opacity: 0.7;
-                    }
-                    .badge {
-                        display: inline-block;
-                        background-color: #6fad45;
-                        color: #fff;
-                        padding: 0.25rem 0.75rem;
-                        border-radius: 9999px;
-                        font-size: 0.85rem;
-                        font-weight: 600;
-                        margin-bottom: 1rem;
-                    }
+                    body { font-family: "Quicksand", sans-serif; font-weight: 500; background-color: #eee; color: #000; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+                    .container { width: 100%; max-width: 600px; padding: 1rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.2); }
+                    .header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid #444; }
+                    .header img { height: 60px; }
+                    .content { padding: 2rem 1rem; }
+                    .content p { font-size: 1rem; text-align: left; margin: 0; }
+                    .details { font-size: 1rem; line-height: 1.5; }
+                    .details p { margin: 0.5rem 0; }
+                    .details b { opacity: 0.7; }
+                    .badge { display: inline-block; background-color: #6fad45; color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
                 </style>
             </head>
             <body>
@@ -385,13 +341,18 @@ export const carePathLead = ({ firstName, lastName, email, phone, careType, serv
                         <span class="badge">New Care Path Lead</span>
                         <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>${username}</strong> completed the care path wizard.</p>
                         <div class="details">
-                            <p><b>Name:</b> <span>${username}</span></p>
-                            <p><b>Email:</b> <span>${email}</span></p>
-                            <p><b>Phone:</b> <span>${phone}</span></p>
-                            <p><b>Care Type:</b> <span>${careTypeLabel}</span></p>
-                            <p><b>Service Needed:</b> <span>${serviceNeeded}</span></p>
-                            <p><b>Location:</b> <span>${location}</span></p>
-                            <p><b>Additional Notes:</b> <span>${additionalNotes || "None"}</span></p>
+                            <p><b>Name:</b> ${username}</p>
+                            <p><b>Email:</b> ${email}</p>
+                            <p><b>Phone:</b> ${phone}</p>
+                            <p><b>Audience:</b> ${audienceLabel}</p>
+                            <p><b>Service Needed:</b> ${need}</p>
+                            <p><b>Coverage:</b> ${coverage || "N/A"}</p>
+                            <p><b>Status:</b> ${status || "N/A"}</p>
+                            <p><b>ZIP:</b> ${zip || "N/A"}</p>
+                            <p><b>Timeline:</b> ${timeline || "N/A"}</p>
+                            <p><b>Relationship:</b> ${relationship || "N/A"}</p>
+                            <p><b>Contact Preference:</b> ${prefLabels || "N/A"}</p>
+                            <p><b>Additional Notes:</b> ${additionalNotes || "None"}</p>
                         </div>
                     </div>
                 </div>
@@ -400,8 +361,8 @@ export const carePathLead = ({ firstName, lastName, email, phone, careType, serv
     `);
 };
 
-export const carePathConfirmation = ({ firstName, lastName, careType }: { firstName: string; lastName: string; careType: string }) => {
-    const careTypeLabel = careType === "child" ? "pediatric" : "adult/senior";
+export const carePathConfirmation = ({ firstName, lastName, audience }: { firstName: string; lastName: string; audience: string }) => {
+    const audienceLabel = audience === "pediatric" ? "pediatric" : "adult/senior";
 
     return (`
         <html>
@@ -463,7 +424,7 @@ export const carePathConfirmation = ({ firstName, lastName, careType }: { firstN
                     </div>
                     <div class="content">
                         <p>Dear ${firstName} ${lastName},</p>
-                        <p>Thank you for exploring ${careTypeLabel} care options with AmeriCare. We have received your information and a member of our care coordination team will be reaching out to you shortly.</p>
+                        <p>Thank you for exploring ${audienceLabel} care options with AmeriCare. We have received your information and a member of our care coordination team will be reaching out to you shortly.</p>
                         <p>If you need immediate assistance, please don't hesitate to call us at <strong>(404) 494-2187</strong>.</p>
                         <p>We look forward to helping you find the right care for your family.</p>
                         <p>Warm regards,</p>

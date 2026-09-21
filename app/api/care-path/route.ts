@@ -3,22 +3,28 @@ import { carePathLead, carePathConfirmation } from "@/lib/Email Templates";
 import { NextRequest, NextResponse } from "next/server";
 
 interface CarePathRequestBody {
+    audience: string;
+    need: string;
+    coverage: string;
+    status: string;
+    zip: string;
+    timeline: string;
+    relationship: string;
     firstName: string;
     lastName: string;
-    email: string;
     phone: string;
-    careType: string;
-    serviceNeeded: string;
-    location: string;
+    email: string;
+    preference: string[];
+    consent: boolean;
     additionalNotes: string;
 }
 
 export async function POST(req: NextRequest) {
     try {
         const body: CarePathRequestBody = await req.json();
-        const { firstName, lastName, email, phone, careType, serviceNeeded, location, additionalNotes } = body;
+        const { audience, need, coverage, status, zip, timeline, relationship, firstName, lastName, phone, email, preference, consent, additionalNotes } = body;
 
-        if (!firstName || !lastName || !email || !phone || !careType || !serviceNeeded || !location) {
+        if (!firstName || !lastName || !email || !phone || !audience || !need) {
             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
         }
 
@@ -29,10 +35,9 @@ export async function POST(req: NextRequest) {
 
         console.log("[care-path] BREVO_API_KEY present:", !!brevoApiKey);
         console.log("[care-path] organisationEmail:", organisationEmail);
-        console.log("[care-path] organisationName:", organisationName);
 
-        const leadHtml = carePathLead({ firstName, lastName, email, phone, careType, serviceNeeded, location, additionalNotes });
-        const confirmationHtml = carePathConfirmation({ firstName, lastName, careType });
+        const leadHtml = carePathLead({ firstName, lastName, email, phone, audience, need, coverage, status, zip, timeline, relationship, preference, additionalNotes });
+        const confirmationHtml = carePathConfirmation({ firstName, lastName, audience });
 
         console.log("[care-path] Sending lead email to:", organisationEmail);
         const leadResponse = await client.sendEmail(
