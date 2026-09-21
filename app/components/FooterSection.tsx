@@ -83,7 +83,17 @@ export default function FooterSection() {
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services">Services</Link>
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/check-care-options">Check Care Options</Link>
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/speak-with-coordinator">Speak with Coordinator</Link>
+                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/book-an-appointment">Book an Appointment</Link>
+                        </div>
+
+                        {/* About */}
+                        <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
+                            <span className="font-semibold text-white/60 text-sm uppercase tracking-wider mb-1">About</span>
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/why-us">Why AmeriCare</Link>
+                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/testimonials">Testimonials</Link>
+                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/resources">Resources</Link>
+                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/careers">Careers</Link>
+                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/policy">Privacy Policy</Link>
                         </div>
 
                         {/* Programs */}
@@ -92,15 +102,6 @@ export default function FooterSection() {
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#gapp">GAPP</Link>
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#ccsp">CCSP</Link>
                             <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/services#source">SOURCE</Link>
-                        </div>
-
-                        {/* Support */}
-                        <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
-                            <span className="font-semibold text-white/60 text-sm uppercase tracking-wider mb-1">Support</span>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/resources">Resources</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/careers">Careers</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/testimonials">Testimonials</Link>
-                            <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="/policy">Privacy Policy</Link>
                         </div>
                     </div>
 
