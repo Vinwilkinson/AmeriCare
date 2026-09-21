@@ -49,6 +49,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 "flex items-center justify-between fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
                 inViewContainer ? "" : "backdrop-blur dark:bg-white/5 bg-primary/5 border-b dark:border-b-white/10 border-b-primary/10"
             )}>
+                <>
                 {/* Logo */}
                 <Link href={"/"} className="flex text-black dark:text-white gap-2 items-center shrink-0">
                     <Image
@@ -153,6 +154,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         )}></div>
                     </div>
                 </div>
+                </>
             </InViewWrapper>
 
             {/* Mobile nav */}
