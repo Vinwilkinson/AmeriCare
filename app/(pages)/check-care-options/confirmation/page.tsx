@@ -137,14 +137,14 @@ function ConfirmationContent() {
     const rec = getRecommendation(data);
 
     return (
-        <div className="relative z-10 dark:bg-darkBg min-h-screen">
+        <div className="relative z-10 dark:bg-darkBg bg-white min-h-screen">
             {/* Breadcrumb */}
             <div className="pt-28 pb-4 sm:px-[8vw] px-6">
                 <div className="max-w-4xl mx-auto">
                     <nav className="text-sm">
                         <Link href="/check-care-options" className="text-primary hover:underline">Check Care Options</Link>
-                        <span className="text-white/40 mx-2">/</span>
-                        <span className="text-white/60">Results</span>
+                        <span className="dark:text-white/40 text-themeBlack/40 mx-2">/</span>
+                        <span className="dark:text-white/60 text-themeBlack/60">Results</span>
                     </nav>
                 </div>
             </div>
@@ -153,8 +153,8 @@ function ConfirmationContent() {
             <div className="pb-12 sm:px-[8vw] px-6">
                 <div className="max-w-4xl mx-auto">
                     <span className="text-primary font-semibold text-sm uppercase tracking-wider">{rec.subtitle}</span>
-                    <h1 className={`${FontFamily.className} text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-6 text-white leading-tight`}>{rec.title}</h1>
-                    <p className="text-lg text-white/60 max-w-2xl">{rec.description}</p>
+                    <h1 className={`${FontFamily.className} text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-6 dark:text-white text-themeBlack leading-tight`}>{rec.title}</h1>
+                    <p className="text-lg dark:text-white/60 text-themeBlack/60 max-w-2xl">{rec.description}</p>
                 </div>
             </div>
 
@@ -183,54 +183,54 @@ function ConfirmationContent() {
             <div className="pb-12 sm:px-[8vw] px-6">
                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                     {/* Thank You Card */}
-                    <div className="rounded-2xl border-2 border-white/10 p-8">
-                        <h2 className={`${FontFamily.className} text-3xl font-bold text-white mb-3`}>Thank you, {data.firstName}.</h2>
-                        <p className="text-white/60 mb-8">A care coordinator will review your information and respond within one business day.</p>
+                    <div className="rounded-2xl border-2 dark:border-white/10 border-primary/20 p-8">
+                        <h2 className={`${FontFamily.className} text-3xl font-bold dark:text-white text-themeBlack mb-3`}>Thank you, {data.firstName}.</h2>
+                        <p className="dark:text-white/60 text-themeBlack/60 mb-8">A care coordinator will review your information and respond within one business day.</p>
                         <div className="flex flex-col gap-3">
                             <Link href="/book-an-appointment" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 active:scale-95 transition-all">
                                 <FaCalendarCheck /> Schedule a Consultation
                             </Link>
-                            <Link href="/check-care-options" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/10 text-white hover:border-primary/50 transition-all">
+                            <Link href="/check-care-options" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 dark:border-white/10 border-primary/25 dark:text-white text-themeBlack hover:border-primary/50 transition-all">
                                 Check another path
                             </Link>
                         </div>
                     </div>
 
                     {/* Summary Card */}
-                    <div className="rounded-2xl border-2 border-white/10 p-8">
-                        <h3 className="text-lg font-semibold text-white mb-6">Your submitted details</h3>
+                    <div className="rounded-2xl border-2 dark:border-white/10 border-primary/20 p-8">
+                        <h3 className="text-lg font-semibold dark:text-white text-themeBlack mb-6">Your submitted details</h3>
                         <div className="space-y-4">
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Care path</span>
-                                <span className="text-white font-medium">{data.audience === "pediatric" ? "Child / Pediatric care" : "Adult / Senior care"}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Care path</span>
+                                <span className="dark:text-white text-themeBlack font-medium">{data.audience === "pediatric" ? "Child / Pediatric care" : "Adult / Senior care"}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Support needed</span>
-                                <span className="text-white font-medium">{needLabel(data.need)}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Support needed</span>
+                                <span className="dark:text-white text-themeBlack font-medium">{needLabel(data.need)}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Program / coverage</span>
-                                <span className="text-white font-medium">{coverageLabel(data.coverage)}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Program / coverage</span>
+                                <span className="dark:text-white text-themeBlack font-medium">{coverageLabel(data.coverage)}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Application status</span>
-                                <span className="text-white font-medium">{statusLabel(data.status)}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Application status</span>
+                                <span className="dark:text-white text-themeBlack font-medium">{statusLabel(data.status)}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">ZIP code</span>
-                                <span className="text-white font-medium flex items-center gap-1.5"><FaLocationDot className="text-primary" /> {data.zip}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">ZIP code</span>
+                                <span className="dark:text-white text-themeBlack font-medium flex items-center gap-1.5"><FaLocationDot className="text-primary" /> {data.zip}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Timeline</span>
-                                <span className="text-white font-medium flex items-center gap-1.5"><FaClock className="text-primary" /> {timelineLabel(data.timeline)}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Timeline</span>
+                                <span className="dark:text-white text-themeBlack font-medium flex items-center gap-1.5"><FaClock className="text-primary" /> {timelineLabel(data.timeline)}</span>
                             </div>
-                            <div className="flex justify-between items-center py-3 border-b border-white/5">
-                                <span className="text-white/50 text-sm">Relationship</span>
-                                <span className="text-white font-medium flex items-center gap-1.5"><FaUser className="text-primary" /> {relationshipLabel(data.relationship)}</span>
+                            <div className="flex justify-between items-center py-3 border-b dark:border-white/5 border-black/5">
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Relationship</span>
+                                <span className="dark:text-white text-themeBlack font-medium flex items-center gap-1.5"><FaUser className="text-primary" /> {relationshipLabel(data.relationship)}</span>
                             </div>
                             <div className="flex justify-between items-center py-3">
-                                <span className="text-white/50 text-sm">Contact</span>
-                                <span className="text-white font-medium flex items-center gap-1.5"><FaEnvelope className="text-primary" /> {data.email}</span>
+                                <span className="dark:text-white/50 text-themeBlack/50 text-sm">Contact</span>
+                                <span className="dark:text-white text-themeBlack font-medium flex items-center gap-1.5"><FaEnvelope className="text-primary" /> {data.email}</span>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ function ConfirmationContent() {
             {/* Bottom CTA */}
             <div className="pb-20 sm:px-[8vw] px-6">
                 <div className="max-w-4xl mx-auto text-center">
-                    <p className="text-white/40 text-sm mb-4">Need immediate help?</p>
+                    <p className="dark:text-white/40 text-themeBlack/40 text-sm mb-4">Need immediate help?</p>
                     <Link href="tel:4044942187" className="inline-flex items-center gap-2 text-primary hover:underline font-semibold">
                         <FaPhone /> Call (404) 494-2187
                     </Link>
