@@ -6,8 +6,10 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaCheck, FaCalendarCheck, FaArrowRight, FaPhone, FaMapMarkerAlt, FaClock, FaUser, FaEnvelope } from "react-icons/fa6";
-import { FontFamily } from "@/app/components/Fonts";
+import { FaCalendarCheck, FaPhone, FaLocationDot, FaClock, FaUser, FaEnvelope } from "react-icons/fa6";
+import { Playfair_Display } from "next/font/google";
+
+const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 interface CarePathData {
     audience: string;
@@ -216,7 +218,7 @@ function ConfirmationContent() {
                             </div>
                             <div className="flex justify-between items-center py-3 border-b border-white/5">
                                 <span className="text-white/50 text-sm">ZIP code</span>
-                                <span className="text-white font-medium flex items-center gap-1.5"><FaMapMarkerAlt className="text-primary" /> {data.zip}</span>
+                                <span className="text-white font-medium flex items-center gap-1.5"><FaLocationDot className="text-primary" /> {data.zip}</span>
                             </div>
                             <div className="flex justify-between items-center py-3 border-b border-white/5">
                                 <span className="text-white/50 text-sm">Timeline</span>
