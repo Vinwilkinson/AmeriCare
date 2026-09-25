@@ -1,0 +1,704 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AmeriCare//Community Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:AmeriCare Community Events
+X-WR-TIMEZONE:America/New_York
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:americare-20261002-1@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261002T173000
+DTEND;TZID=America/New_York:20261002T183000
+SUMMARY:FAST Fins MTV
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-mtv-2-2/2026-10-02/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-mtv-2-2/2026-10-02/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261003-2@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261003T080000
+DTEND;TZID=America/New_York:20261003T170000
+SUMMARY:Blue Ridge 250 Fundraiser
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/blue-ridge-250-fundraiser/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/blue-ridge-250-fundraiser/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261003-3@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261003T100000
+DTEND;TZID=America/New_York:20261003T140000
+SUMMARY:Extra Special Saturday Alpharetta
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/extra-special-saturday-2/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/extra-special-saturday-2/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261004-4@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261004T090000
+DTEND;TZID=America/New_York:20261004T100000
+SUMMARY:FAST Fins Johns Creek
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-dynamo-johns-creek-2/2026-10-04/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-dynamo-johns-creek-2/2026-10-04/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261004-5@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261004T140000
+DTEND;TZID=America/New_York:20261004T150000
+SUMMARY:FAST Fins Griffin
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-spalding/2026-10-04/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-spalding/2026-10-04/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261004-6@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261004T143000
+DTEND;TZID=America/New_York:20261004T153000
+SUMMARY:FAST Fins Atlanta
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-chastain-12/2026-10-04/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-chastain-12/2026-10-04/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261005-7@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261005T100000
+DTEND;TZID=America/New_York:20261005T113000
+SUMMARY:Buford Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/buford-share-group-12/2026-10-05/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/buford-share-group-12/2026-10-05/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261006-8@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261006T100000
+DTEND;TZID=America/New_York:20261006T110000
+SUMMARY:Jonesboro Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/jonesboro-share-group/2026-10-06/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/jonesboro-share-group/2026-10-06/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261007-9@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261007T093000
+DTEND;TZID=America/New_York:20261007T103000
+SUMMARY:Woodstock Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/woodstock-share-group-10/2026-10-07/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/woodstock-share-group-10/2026-10-07/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261007-10@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261007T100000
+DTEND;TZID=America/New_York:20261007T110000
+SUMMARY:Snelville Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/snelville-share-group/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/snelville-share-group/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261008-11@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261008T103000
+DTEND;TZID=America/New_York:20261008T113000
+SUMMARY:Cumming Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/cumming-share-group-12/2026-10-08/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/cumming-share-group-12/2026-10-08/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261009-12@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261009T200000
+DTEND;TZID=America/New_York:20261009T210000
+SUMMARY:Sip & Share Virtual
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/sip-share-virtual/2026-10-09/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/sip-share-virtual/2026-10-09/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261016-13@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261016T100000
+DTEND;TZID=America/New_York:20261016T110000
+SUMMARY:Parent Workshop: Rooted and Rising
+DESCRIPTION:Workshop - presented by FOCUS. Details: https://focus-ga.org/
+ event/parent-workshop-rooted-and-rising/
+CATEGORIES:Workshop
+URL:https://focus-ga.org/event/parent-workshop-rooted-and-rising/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261016-14@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261016T173000
+DTEND;TZID=America/New_York:20261016T183000
+SUMMARY:FAST Fins MTV
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-mtv-2-2/2026-10-16/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-mtv-2-2/2026-10-16/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261018-15@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261018T090000
+DTEND;TZID=America/New_York:20261018T100000
+SUMMARY:FAST Fins Johns Creek
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-dynamo-johns-creek-2/2026-10-18/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-dynamo-johns-creek-2/2026-10-18/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261018-16@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261018T140000
+DTEND;TZID=America/New_York:20261018T150000
+SUMMARY:FAST Fins Griffin
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-spalding/2026-10-18/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-spalding/2026-10-18/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261018-17@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261018T143000
+DTEND;TZID=America/New_York:20261018T153000
+SUMMARY:FAST Fins Atlanta
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-chastain-12/2026-10-18/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-chastain-12/2026-10-18/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261021-18@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261021T110000
+DTEND;TZID=America/New_York:20261021T120000
+SUMMARY:Parent Workshop: Advocating for Your Child in Special Education
+DESCRIPTION:Workshop - presented by FOCUS. Details: https://focus-ga.org/
+ event/parent-workshop-advocating-for-your-child-in-special-education/
+CATEGORIES:Workshop
+URL:https://focus-ga.org/event/parent-workshop-advocating-for-your-child-
+ in-special-education/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261021-19@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261021T193000
+DTEND;TZID=America/New_York:20261021T203000
+SUMMARY:Parent Advisory Council
+DESCRIPTION:Workshop - presented by FOCUS. Details: https://focus-ga.org/
+ event/parent-advisory-council-2/
+CATEGORIES:Workshop
+URL:https://focus-ga.org/event/parent-advisory-council-2/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261023-20@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261023T090000
+DTEND;TZID=America/New_York:20261023T100000
+SUMMARY:Dads Decatur Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/dads-decatur-share-group-2/2026-10-23/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/dads-decatur-share-group-2/2026-10-23/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261023-21@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261023T173000
+DTEND;TZID=America/New_York:20261023T183000
+SUMMARY:FAST Fins MTV
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-mtv-2-2/2026-10-23/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-mtv-2-2/2026-10-23/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261025-22@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261025T090000
+DTEND;TZID=America/New_York:20261025T100000
+SUMMARY:FAST Fins Johns Creek
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-dynamo-johns-creek-2/2026-10-25/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-dynamo-johns-creek-2/2026-10-25/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261025-23@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261025T140000
+DTEND;TZID=America/New_York:20261025T150000
+SUMMARY:FAST Fins Griffin
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-spalding/2026-10-25/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-spalding/2026-10-25/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261025-24@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261025T143000
+DTEND;TZID=America/New_York:20261025T153000
+SUMMARY:FAST Fins Atlanta
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-chastain-12/2026-10-25/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-chastain-12/2026-10-25/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261028-25@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261028T100000
+DTEND;TZID=America/New_York:20261028T110000
+SUMMARY:Atlanta Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/atlanta-share-group-17/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/atlanta-share-group-17/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261030-26@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261030T173000
+DTEND;TZID=America/New_York:20261030T183000
+SUMMARY:FAST Fins MTV
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-mtv-2-2/2026-10-30/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-mtv-2-2/2026-10-30/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261031-27@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261031T100000
+DTEND;TZID=America/New_York:20261031T113000
+SUMMARY:Peachtree City Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/peachtree-city-share-group-17-2/2026-10-31/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/peachtree-city-share-group-17-2/2026-10-31
+ /
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261101-28@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261101T090000
+DTEND;TZID=America/New_York:20261101T100000
+SUMMARY:FAST Fins Johns Creek
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-dynamo-johns-creek-2/2026-11-01/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-dynamo-johns-creek-2/2026-11-01/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261101-29@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261101T140000
+DTEND;TZID=America/New_York:20261101T150000
+SUMMARY:FAST Fins Griffin
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-spalding/2026-11-01/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-spalding/2026-11-01/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261101-30@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261101T143000
+DTEND;TZID=America/New_York:20261101T153000
+SUMMARY:FAST Fins Atlanta
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-chastain-12/2026-11-01/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-chastain-12/2026-11-01/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261102-31@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261102T100000
+DTEND;TZID=America/New_York:20261102T113000
+SUMMARY:Buford Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/buford-share-group-12/2026-11-02/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/buford-share-group-12/2026-11-02/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261102-32@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261102T110000
+DTEND;TZID=America/New_York:20261102T120000
+SUMMARY:Parent Workshop: Incorporating Mindfulness into Your Family Routi
+ ne
+DESCRIPTION:Workshop - presented by FOCUS. Details: https://focus-ga.org/
+ event/parent-workshop-incorporating-mindfulness-into-your-family-routine
+ /
+CATEGORIES:Workshop
+URL:https://focus-ga.org/event/parent-workshop-incorporating-mindfulness-
+ into-your-family-routine/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261103-33@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261103T100000
+DTEND;TZID=America/New_York:20261103T110000
+SUMMARY:Jonesboro Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/jonesboro-share-group/2026-11-03/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/jonesboro-share-group/2026-11-03/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261104-34@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261104T093000
+DTEND;TZID=America/New_York:20261104T103000
+SUMMARY:Woodstock Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/woodstock-share-group-10/2026-11-04/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/woodstock-share-group-10/2026-11-04/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261106-35@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261106T173000
+DTEND;TZID=America/New_York:20261106T183000
+SUMMARY:FAST Fins MTV
+DESCRIPTION:Adaptive Swim - presented by FOCUS. Details: https://focus-ga
+ .org/event/fast-fins-mtv-2-2/2026-11-06/
+CATEGORIES:Adaptive Swim
+URL:https://focus-ga.org/event/fast-fins-mtv-2-2/2026-11-06/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261107-36@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261107T100000
+DTEND;TZID=America/New_York:20261107T140000
+SUMMARY:Extra Special Saturday Buckhead
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/extra-special-saturday-buckhead/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/extra-special-saturday-buckhead/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261107-37@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261107T183000
+DTEND;TZID=America/New_York:20261107T203000
+SUMMARY:Teen & Young Adult Silent Disco
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/teen-young-adult-silent-disco/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/teen-young-adult-silent-disco/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261108-38@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261108T100000
+DTEND;TZID=America/New_York:20261108T120000
+SUMMARY:Zoo Day
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/25265/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/25265/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261111-39@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261111T100000
+DTEND;TZID=America/New_York:20261111T110000
+SUMMARY:Atlanta Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/atlanta-share-group-18/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/atlanta-share-group-18/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261111-40@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261111T100000
+DTEND;TZID=America/New_York:20261111T113000
+SUMMARY:Snellville Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/snellville-share-group-13/2026-11-11/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/snellville-share-group-13/2026-11-11/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261112-41@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261112T103000
+DTEND;TZID=America/New_York:20261112T113000
+SUMMARY:Cumming Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/cumming-share-group-12/2026-11-12/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/cumming-share-group-12/2026-11-12/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261113-42@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261113T200000
+DTEND;TZID=America/New_York:20261113T210000
+SUMMARY:Sip & Share Virtual
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/sip-share-virtual/2026-11-13/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/sip-share-virtual/2026-11-13/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261114-43@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261114T100000
+DTEND;TZID=America/New_York:20261114T140000
+SUMMARY:Extra Special Saturday Alpharetta
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/extra-special-saturday-4/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/extra-special-saturday-4/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261128-44@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261128T100000
+DTEND;TZID=America/New_York:20261128T113000
+SUMMARY:Peachtree City Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/peachtree-city-share-group-17-2/2026-11-28/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/peachtree-city-share-group-17-2/2026-11-28
+ /
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261201-45@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261201T100000
+DTEND;TZID=America/New_York:20261201T110000
+SUMMARY:Jonesboro Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/jonesboro-share-group/2026-12-01/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/jonesboro-share-group/2026-12-01/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261202-46@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261202T093000
+DTEND;TZID=America/New_York:20261202T103000
+SUMMARY:Woodstock Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/woodstock-share-group-10/2026-12-02/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/woodstock-share-group-10/2026-12-02/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261205-47@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261205T100000
+DTEND;TZID=America/New_York:20261205T120000
+SUMMARY:FOCUS + Lekotek Holiday Party
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/focus-lekotek-holiday-party-4/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/focus-lekotek-holiday-party-4/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261207-48@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261207T100000
+DTEND;TZID=America/New_York:20261207T113000
+SUMMARY:Buford Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/buford-share-group-12/2026-12-07/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/buford-share-group-12/2026-12-07/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261209-49@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261209T183000
+DTEND;TZID=America/New_York:20261209T193000
+SUMMARY:AmeriCare Monthly Parent Webinar
+DESCRIPTION:Webinar - presented by AmeriCare. Details: https://family-sup
+ port-score.lovable.app/webinar
+CATEGORIES:Webinar
+URL:https://family-support-score.lovable.app/webinar
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261210-50@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261210T103000
+DTEND;TZID=America/New_York:20261210T113000
+SUMMARY:Cumming Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/cumming-share-group-12/2026-12-10/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/cumming-share-group-12/2026-12-10/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261211-51@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261211T200000
+DTEND;TZID=America/New_York:20261211T210000
+SUMMARY:Sip & Share Virtual
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/sip-share-virtual/2026-12-11/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/sip-share-virtual/2026-12-11/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20261226-52@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20261226T100000
+DTEND;TZID=America/New_York:20261226T113000
+SUMMARY:Peachtree City Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/peachtree-city-share-group-17-2/2026-12-26/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/peachtree-city-share-group-17-2/2026-12-26
+ /
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270104-53@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270104T100000
+DTEND;TZID=America/New_York:20270104T113000
+SUMMARY:Buford Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/buford-share-group-12/2027-01-04/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/buford-share-group-12/2027-01-04/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270105-54@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270105T100000
+DTEND;TZID=America/New_York:20270105T110000
+SUMMARY:Jonesboro Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/jonesboro-share-group/2027-01-05/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/jonesboro-share-group/2027-01-05/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270106-55@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270106T093000
+DTEND;TZID=America/New_York:20270106T103000
+SUMMARY:Woodstock Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/woodstock-share-group-10/2027-01-06/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/woodstock-share-group-10/2027-01-06/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270108-56@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270108T200000
+DTEND;TZID=America/New_York:20270108T210000
+SUMMARY:Sip & Share Virtual
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/sip-share-virtual/2027-01-08/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/sip-share-virtual/2027-01-08/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270113-57@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270113T100000
+DTEND;TZID=America/New_York:20270113T113000
+SUMMARY:Snellville Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/snellville-share-group-13/2027-01-13/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/snellville-share-group-13/2027-01-13/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270114-58@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270114T103000
+DTEND;TZID=America/New_York:20270114T113000
+SUMMARY:Cumming Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/cumming-share-group-12/2027-01-14/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/cumming-share-group-12/2027-01-14/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270122-59@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270122T090000
+DTEND;TZID=America/New_York:20270122T100000
+SUMMARY:Dads Decatur Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/dads-decatur-share-group-2/2027-01-22/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/dads-decatur-share-group-2/2027-01-22/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270130-60@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270130T080000
+DTEND;TZID=America/New_York:20270130T140000
+SUMMARY:40th Annual Education Conference
+DESCRIPTION:Community Event - presented by FOCUS. Details: https://focus-
+ ga.org/event/40th-annual-education-conference/
+CATEGORIES:Community Event
+URL:https://focus-ga.org/event/40th-annual-education-conference/
+END:VEVENT
+BEGIN:VEVENT
+UID:americare-20270130-61@americareinhome.com
+DTSTAMP:20260925T120000Z
+DTSTART;TZID=America/New_York:20270130T100000
+DTEND;TZID=America/New_York:20270130T113000
+SUMMARY:Peachtree City Share Group
+DESCRIPTION:Support Group - presented by FOCUS. Details: https://focus-ga
+ .org/event/peachtree-city-share-group-17-2/2027-01-30/
+CATEGORIES:Support Group
+URL:https://focus-ga.org/event/peachtree-city-share-group-17-2/2027-01-30
+ /
+END:VEVENT
+END:VCALENDAR

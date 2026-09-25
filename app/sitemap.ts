@@ -39,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
+            url: 'https://americareinhome.com/events',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.6,
+        },
+        {
             url: 'https://americareinhome.com/check-care-options',
             lastModified: new Date(),
             changeFrequency: 'monthly',
