@@ -15,6 +15,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
     const pathname = usePathname();
     const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
     const [aboutOpen, setAboutOpen] = useState<boolean>(false);
+    const [servicesOpen, setServicesOpen] = useState<boolean>(false);
 
     const controls = useAnimation();
 
@@ -41,7 +42,8 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
     };
 
     const isActive = (path: string) => pathname === path;
-    const isAboutActive = pathname === "/why-us" || pathname === "/testimonials";
+    const isAboutActive = pathname === "/why-us" || pathname.startsWith("/why-us/") || pathname === "/testimonials";
+    const isServicesActive = pathname === "/services" || pathname.startsWith("/services/");
 
     return (
         <>
@@ -72,10 +74,39 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         "px-4 py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
                         isActive("/") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/"}>Home</Link>
-                    <Link className={clsx(
-                        "px-4 py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
-                        isActive("/services") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
-                    )} href={"/services"}>Services</Link>
+                    {/* Services dropdown */}
+                    <div
+                        className="relative"
+                        onMouseEnter={() => setServicesOpen(true)}
+                        onMouseLeave={() => setServicesOpen(false)}
+                        onFocus={() => setServicesOpen(true)}
+                        onBlur={() => setServicesOpen(false)}
+                    >
+                        <Link
+                            className={clsx(
+                                "px-4 py-2 border-b-2 whitespace-nowrap hover:text-primary smooth flex items-center gap-1",
+                                isServicesActive ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
+                            )} href={"/services"}
+                        >
+                            Services <FaChevronDown className={clsx("text-xs transition-transform", servicesOpen && "rotate-180")} />
+                        </Link>
+                        {servicesOpen && (
+                            <div className="absolute top-full left-0 mt-1 bg-white dark:bg-darkBg border border-black/10 dark:border-white/10 rounded-xl shadow-xl py-2 min-w-[250px] z-50">
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
+                                    isActive("/services") && "text-primary font-semibold"
+                                )} href={"/services"}>General</Link>
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
+                                    isActive("/services/ccsp-source") && "text-primary font-semibold"
+                                )} href={"/services/ccsp-source"}>For Adults · CCSP/SOURCE</Link>
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
+                                    isActive("/services/gapp") && "text-primary font-semibold"
+                                )} href={"/services/gapp"}>For Kids · GAPP</Link>
+                            </div>
+                        )}
+                    </div>
 
                     {/* About dropdown */}
                     <div
@@ -95,6 +126,10 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                                     "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
                                     isActive("/why-us") && "text-primary font-semibold"
                                 )} href={"/why-us"}>Why AmeriCare</Link>
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
+                                    isActive("/why-us/team") && "text-primary font-semibold"
+                                )} href={"/why-us/team"}>Meet Our Team</Link>
                                 <Link className={clsx(
                                     "block px-5 py-2.5 hover:bg-primary/10 hover:text-primary smooth",
                                     isActive("/testimonials") && "text-primary font-semibold"
@@ -172,12 +207,24 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                     )} href={"/"}>Home</Link>
                     <Link className={clsx(
                         "px-5 origin-right py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
-                        isActive("/services") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
+                        isServicesActive ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/services"}>Services</Link>
                     <Link className={clsx(
+                        "pl-10 origin-right py-1 text-base whitespace-nowrap hover:text-primary smooth",
+                        isActive("/services/ccsp-source") ? "font-semibold text-primary" : "text-black/70 dark:text-white/70"
+                    )} href={"/services/ccsp-source"}>For Adults · CCSP/SOURCE</Link>
+                    <Link className={clsx(
+                        "pl-10 origin-right py-1 text-base whitespace-nowrap hover:text-primary smooth",
+                        isActive("/services/gapp") ? "font-semibold text-primary" : "text-black/70 dark:text-white/70"
+                    )} href={"/services/gapp"}>For Kids · GAPP</Link>
+                    <Link className={clsx(
                         "px-5 origin-left py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
-                        isActive("/why-us") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
+                        pathname === "/why-us" || pathname.startsWith("/why-us/") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/why-us"}>Why AmeriCare</Link>
+                    <Link className={clsx(
+                        "pl-10 origin-right py-1 text-base whitespace-nowrap hover:text-primary smooth",
+                        isActive("/why-us/team") ? "font-semibold text-primary" : "text-black/70 dark:text-white/70"
+                    )} href={"/why-us/team"}>Meet Our Team</Link>
                     <Link className={clsx(
                         "px-5 origin-left py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
                         isActive("/testimonials") ? "font-semibold border-b-primary/70 text-primary" : "border-b-transparent hover:border-b-primary/25"

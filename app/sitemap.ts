@@ -15,10 +15,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: 'https://americareinhome.com/services/gapp',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: 'https://americareinhome.com/services/ccsp-source',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: 'https://americareinhome.com/why-us',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
+        },
+        {
+            url: 'https://americareinhome.com/why-us/team',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: 'https://americareinhome.com/testimonials',
@@ -61,6 +79,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 1,
+        },
+        {
+            url: 'https://americareinhome.com/policy',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.2,
         },
     ]
 }

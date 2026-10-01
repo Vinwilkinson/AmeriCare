@@ -91,6 +91,7 @@ export default function FooterSection() {
                             <div className="flex flex-col gap-3">
                                 <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">About</span>
                                 <Link className="hover:text-primary smooth" href="/why-us">Why AmeriCare</Link>
+                                <Link className="hover:text-primary smooth" href="/why-us/team">Meet Our Team</Link>
                                 <Link className="hover:text-primary smooth" href="/testimonials">Testimonials</Link>
                                 <Link className="hover:text-primary smooth" href="/resources">Resources</Link>
                                 <Link className="hover:text-primary smooth" href="/careers">Careers</Link>
@@ -100,9 +101,9 @@ export default function FooterSection() {
                             {/* Programs */}
                             <div className="flex flex-col gap-3">
                                 <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">Programs</span>
-                                <Link className="hover:text-primary smooth" href="/services#gapp">GAPP</Link>
-                                <Link className="hover:text-primary smooth" href="/services#ccsp">CCSP</Link>
-                                <Link className="hover:text-primary smooth" href="/services#source">SOURCE</Link>
+                                <Link className="hover:text-primary smooth" href="/services/gapp">GAPP</Link>
+                                <Link className="hover:text-primary smooth" href="/services/ccsp-source">CCSP</Link>
+                                <Link className="hover:text-primary smooth" href="/services/ccsp-source">SOURCE</Link>
                             </div>
                         </div>
                     </div>
