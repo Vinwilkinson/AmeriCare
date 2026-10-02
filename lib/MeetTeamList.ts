@@ -34,7 +34,7 @@ export const MeetTeamList:TeamMember[] = [
         name:"Paul Valenzuela",
         role:"Marketing Manager",
         photo:"https://americare.sirv.com/team/PHOTO-2025-12-18-09-04-17.jpg",
-        id: "31295d8a-337c-582a-bdd5-2622c682e1b0"
+        id: "31e929ed-e61d-4657-9744-0c830c17b1e8"
     },
     {
         name:"Yveth San Luis",
@@ -46,25 +46,25 @@ export const MeetTeamList:TeamMember[] = [
         name:"Brittany Sanders",
         role:"Administrative Manager",
         photo:"https://americare.sirv.com/team/5b99b7b7-e4f5-4921-9deb-a2594aee8dd3.JPG",
-        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+        id: "450f70e5-1b84-4923-bac7-53e8539bea72"
     },
     {
         name:"Jorge Ramirez",
         role:"Business Development Specialist",
         photo:"https://americare.sirv.com/team/jorge_rameriz_new.jpg",
-        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+        id: "e4bd2fb4-de9d-49f5-8e71-f187c7acf183"
     },
     {
         name:"Karen June Cioco",
         role:"Customer Care Manager",
         photo:"https://americare.sirv.com/team/PHOTO-2025-12-17-15-59-48.jpg",
-        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+        id: "352e9f3f-3eee-40a3-a92e-336eaacca220"
     },
     {
         name:"Jesus Marino",
         role:"Sales Manager",
         photo:"https://americare.sirv.com/team/businessperson-male-hispanic-lat.jpg",
-        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+        id: "5eacf821-f3a6-4015-a88b-c1197bdf959a"
     },
 
 ]
