@@ -83,10 +83,10 @@ export default function OurMissionSection() {
                     <InViewWrapper animation={cardInAlt} className="min-w-[18rem] flex-1 relative z-10 self-end">
                         <div className="rounded-tl-[3rem] overflow-hidden w-full">
                             <Image
-                                src={"https://americare.sirv.com/rusty-watson-yIGinlYA6t8-unsplash.jpg"}
+                                src={"/why-ameri-care.jpg"}
                                 alt="AmeriCare nurse with child"
-                                height={800}
-                                width={1200}
+                                height={1049}
+                                width={1680}
                                 priority
                                 className="w-full h-[28rem] object-cover object-top"
                             />
