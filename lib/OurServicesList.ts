@@ -9,7 +9,7 @@ export const OurServicesList : {title: string, content: string}[] = [
     },
     {
         title: "Skilled Nursing Care",
-        content: "Our experienced nurses offer a range of services  includingmedication management, wound care, and disease management to ensure seniors receive the best possible medical care."
+        content: "Our experienced nurses offer a range of services, including medication management, wound care, and disease management to ensure seniors receive the best possible medical care."
     },
     {
         title: "Personal Care Assistance",
