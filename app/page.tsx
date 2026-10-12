@@ -3,7 +3,6 @@ import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import MottoSection from "./HomePage Sections/MottoSection";
 import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import TestimonialMarquee from "./HomePage Sections/TestimonialMarquee";
-import FormSection from "./HomePage Sections/FormSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 import OurServiceMiniSection from "./HomePage Sections/OurServiceMiniSection";
 import { Toaster } from "react-hot-toast";
@@ -31,7 +30,6 @@ export default function page() {
             <MottoSection />
             <OurMissionSection />
             <TestimonialMarquee />
-            <FormSection />
             <JoinTeamSection />
         </>
     )

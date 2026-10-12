@@ -1,5 +1,4 @@
 import NavigationComponent from "@/app/components/NavSection";
-import FormSection from "@/app/HomePage Sections/FormSection";
 import ProgramDetail from "../components/ProgramDetail";
 import { ccspProgram } from "@/lib/ProgramDetails";
 import { generalMetadata } from "@/lib/MetaData";
@@ -19,7 +18,6 @@ export default function CcspSourcePage() {
 
             <div className="relative z-10">
                 <ProgramDetail program={ccspProgram} />
-                <FormSection />
             </div>
         </>
     );

@@ -2,7 +2,6 @@ import TopSection from "./components/TopSection";
 import ServiceCategories from "./components/ServiceCategories";
 import OurCareGivers from "./components/OurCaregivers";
 import NavigationComponent from "@/app/components/NavSection";
-import FormSection from "@/app/HomePage Sections/FormSection";
 import { generalMetadata } from "@/lib/MetaData";
 import { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
@@ -29,7 +28,6 @@ export default function ServicesPage() {
                 <TopSection />
                 <ServiceCategories />
                 <OurCareGivers />
-                <FormSection />
             </div>
         </div>
     )

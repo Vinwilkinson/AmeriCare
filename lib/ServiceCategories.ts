@@ -42,7 +42,7 @@ export const serviceCategories: ServiceCategory[] = [
         description:
             "The Georgia Pediatric Program (GAPP) provides in-home nursing services for medically fragile children under 21. It ensures children with complex medical needs receive continuous, high-quality care in the place they feel most comfortable — home.",
         benefits: ["Skilled Nursing", "Care Coordination", "Family Support"],
-        ctaPrimary: { text: "Check Eligibility", href: "#check_eligibility" },
+        ctaPrimary: { text: "Check Eligibility", href: "/check-care-options" },
         ctaSecondary: { text: "Speak with a Coordinator", href: "/speak-with-coordinator" },
         ctaInfo: { text: "More Information", href: "/services/gapp" },
         image: {
@@ -81,7 +81,7 @@ export const serviceCategories: ServiceCategory[] = [
         description:
             "The Community Care Services Program (CCSP) and Service Options Using Resources in a Community Environment (SOURCE) are Medicaid waiver programs designed to assist elderly and disabled individuals in Georgia with in-home support services that help them avoid long-term care facilities.",
         benefits: ["Personalized Care", "Comprehensive Support", "Wide Range of Services"],
-        ctaPrimary: { text: "Check Eligibility", href: "#check_eligibility" },
+        ctaPrimary: { text: "Check Eligibility", href: "/check-care-options" },
         ctaSecondary: { text: "Speak with a Coordinator", href: "/speak-with-coordinator" },
         ctaInfo: { text: "More Information", href: "/services/ccsp-source" },
         image: {

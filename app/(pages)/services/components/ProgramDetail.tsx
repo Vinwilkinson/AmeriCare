@@ -140,7 +140,7 @@ export default function ProgramDetail({ program }: { program: ProgramPageData })
                                 </p>
 
                                 <div className="flex flex-wrap items-center gap-4 pt-1">
-                                    <CustomBtn text="Check Eligibility" linkHref="#check_eligibility" inHero customClass="sm:!px-8" />
+                                    <CustomBtn text="Check Eligibility" linkHref="/check-care-options" inHero customClass="sm:!px-8" />
                                     <CustomBtn text="Speak with a Coordinator" linkHref="/speak-with-coordinator" customClass="sm:!px-8" />
                                 </div>
                             </>
