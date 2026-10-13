@@ -85,10 +85,10 @@ export const serviceCategories: ServiceCategory[] = [
         ctaSecondary: { text: "Speak with a Coordinator", href: "/speak-with-coordinator" },
         ctaInfo: { text: "More Information", href: "/services/ccsp-source" },
         image: {
-            src: "https://americare.sirv.com/pexels-rollz-19971193.jpg",
-            alt: "Older couple sharing a happy moment together on a park bench",
-            width: 5602,
-            height: 3735,
+            src: "/senior-family-care.jpg",
+            alt: "Senior man smiling with family and AmeriCare caregiver at home",
+            width: 1674,
+            height: 887,
         },
         accent: "secondary",
         cards: [
