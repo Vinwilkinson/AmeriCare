@@ -136,15 +136,15 @@ export default function CcspSourcePage() {
                         height: 887,
                     }}
                     imageBadge={{ lead: "More support. More everyday moments.", accent: "Personal care and companionship with AmeriCare" }}
-                    accent="secondary"
+                    accent="primary"
                     guideEyebrow="A clearer path to care"
                     guideTitle="Your guide to care at home"
                     guideIntro="Understand the programs, explore daily support, and learn where to start for adult home care in Georgia."
                     toc={toc}
                 />
 
-                <GuideLayout toc={toc} accent="secondary">
-                    <GuideSection id="overview" label="01 / Family guide" title="What Are CCSP and SOURCE?" accent="secondary">
+                <GuideLayout toc={toc} accent="primary">
+                    <GuideSection id="overview" label="01 / Family guide" title="What Are CCSP and SOURCE?" accent="primary">
                         <p>
                             CCSP and SOURCE are Georgia Medicaid programs within the Elderly and Disabled Waiver Program (EDWP). They help
                             eligible older adults and people with disabilities receive support at home or in the community as an alternative
@@ -185,7 +185,7 @@ export default function CcspSourcePage() {
                         id="comparison"
                         label="02 / Family guide"
                         title="CCSP vs. SOURCE: Understanding the Difference"
-                        accent="secondary"
+                        accent="primary"
                     >
                         <p>
                             Both programs focus on helping eligible people receive care in the community. A key distinction is SOURCE’s
@@ -204,10 +204,10 @@ export default function CcspSourcePage() {
                             <table className="w-full min-w-[36rem] border-collapse text-left text-sm sm:text-[0.95rem]">
                                 <caption className="sr-only">CCSP and SOURCE at a glance</caption>
                                 <thead>
-                                    <tr className="border-b border-secondary/30">
+                                    <tr className="border-b border-primary/30">
                                         <th scope="col" className="py-3 pr-4 font-semibold text-gray-900 dark:text-white">At a glance</th>
-                                        <th scope="col" className="py-3 pr-4 font-semibold text-[#1f7a86] dark:text-secondary">CCSP</th>
-                                        <th scope="col" className="py-3 pr-4 font-semibold text-[#1f7a86] dark:text-secondary">SOURCE</th>
+                                        <th scope="col" className="py-3 pr-4 font-semibold text-[#3d7a26] dark:text-primary">CCSP</th>
+                                        <th scope="col" className="py-3 pr-4 font-semibold text-[#3d7a26] dark:text-primary">SOURCE</th>
                                     </tr>
                                 </thead>
                                 <tbody className="align-top text-gray-600 dark:text-gray-400">
@@ -225,7 +225,7 @@ export default function CcspSourcePage() {
                                         <th scope="row" className="py-3 pr-4 font-medium text-gray-800 dark:text-gray-200">Starting point</th>
                                         <td className="py-3 pr-4" colSpan={2}>
                                             Georgia’s aging and disability network:{" "}
-                                            <a href="tel:+18665524464" className="font-semibold text-[#1f7a86] dark:text-secondary hover:underline">
+                                            <a href="tel:+18665524464" className="font-semibold text-[#3d7a26] dark:text-primary hover:underline">
                                                 {SCREENING_PHONE}
                                             </a>
                                         </td>
@@ -235,7 +235,7 @@ export default function CcspSourcePage() {
                         </div>
                     </GuideSection>
 
-                    <GuideSection id="services" label="03 / Family guide" title="Personal Care and Daily Support With AmeriCare" accent="secondary">
+                    <GuideSection id="services" label="03 / Family guide" title="Personal Care and Daily Support With AmeriCare" accent="primary">
                         <p>
                             Daily assistance can make familiar routines easier to manage. AmeriCare’s current services include personal care
                             and companionship. The support delivered depends on the care plan, approved services, and staffing.
@@ -277,7 +277,7 @@ export default function CcspSourcePage() {
                         <p className="pt-1">
                             <a
                                 href="/check-care-options"
-                                className="inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
+                                className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
                             >
                                 Discuss home care options <span aria-hidden="true">↗</span>
                             </a>
@@ -288,7 +288,7 @@ export default function CcspSourcePage() {
                         id="program-services"
                         label="04 / Family guide"
                         title="What Other Services May the Programs Include?"
-                        accent="secondary"
+                        accent="primary"
                     >
                         <p>
                             Georgia lists personal care, adult day services, home-delivered meals, alternative living services, and caregiver
@@ -308,7 +308,7 @@ export default function CcspSourcePage() {
                         id="eligibility"
                         label="05 / Family guide"
                         title="Who May Qualify for CCSP or SOURCE in Georgia?"
-                        accent="secondary"
+                        accent="primary"
                     >
                         <p>
                             Eligibility involves both care needs and Medicaid requirements. Georgia’s EDWP guidance describes nursing facility
@@ -345,22 +345,22 @@ export default function CcspSourcePage() {
                         <p className="pt-1">
                             <a
                                 href="/speak-with-coordinator"
-                                className="inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
+                                className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
                             >
                                 Talk with AmeriCare <span aria-hidden="true">↗</span>
                             </a>
                         </p>
                     </GuideSection>
 
-                    <GuideSection id="apply" label="06 / Family guide" title="How to Apply for CCSP/SOURCE Services" accent="secondary">
+                    <GuideSection id="apply" label="06 / Family guide" title="How to Apply for CCSP/SOURCE Services" accent="primary">
                         <p>
                             Start through Georgia’s aging and disability network. The statewide number is{" "}
-                            <a href="tel:+18665524464" className="font-semibold text-[#1f7a86] dark:text-secondary hover:underline">
+                            <a href="tel:+18665524464" className="font-semibold text-[#3d7a26] dark:text-primary hover:underline">
                                 {SCREENING_PHONE}
                             </a>
                             .
                         </p>
-                        <ol className="flex flex-col gap-3 list-decimal list-outside pl-5 marker:font-semibold marker:text-[#1f7a86] dark:marker:text-secondary">
+                        <ol className="flex flex-col gap-3 list-decimal list-outside pl-5 marker:font-semibold marker:text-[#3d7a26] dark:marker:text-primary">
                             {applySteps.map((step) => (
                                 <li key={step}>{step}</li>
                             ))}
@@ -373,14 +373,14 @@ export default function CcspSourcePage() {
                             <p>
                                 <a
                                     href="/speak-with-coordinator"
-                                    className="inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
+                                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
                                 >
                                     Discuss the next step <span aria-hidden="true">↗</span>
                                 </a>
                             </p>
                             <p className="text-gray-500 dark:text-gray-400">
                                 Official program screening: Georgia’s aging and disability network{" "}
-                                <a href="tel:+18665524464" className="font-semibold text-[#1f7a86] dark:text-secondary hover:underline">
+                                <a href="tel:+18665524464" className="font-semibold text-[#3d7a26] dark:text-primary hover:underline">
                                     {SCREENING_PHONE}
                                 </a>{" "}
                                 — for AmeriCare service inquiries, call {PHONE}.
@@ -388,10 +388,10 @@ export default function CcspSourcePage() {
                         </div>
                     </GuideSection>
 
-                    <GuideSection id="checklist" label="07 / Family guide" title="What Should I Have Ready When I Call?" accent="secondary">
+                    <GuideSection id="checklist" label="07 / Family guide" title="What Should I Have Ready When I Call?" accent="primary">
                         <p>A first conversation is easier when you can describe the situation clearly. Consider having:</p>
                         <GuideChecklist
-                            accent="secondary"
+                            accent="primary"
                             items={[
                                 "The person’s age, county, and ZIP code.",
                                 "Medicaid or other insurance information.",
@@ -409,7 +409,7 @@ export default function CcspSourcePage() {
                         </p>
                     </GuideSection>
 
-                    <GuideSection id="cost" label="08 / Family guide" title="How Much Do CCSP and SOURCE Services Cost?" accent="secondary">
+                    <GuideSection id="cost" label="08 / Family guide" title="How Much Do CCSP and SOURCE Services Cost?" accent="primary">
                         <p>
                             These are Medicaid-funded programs, but coverage and any required contribution must be confirmed for the
                             individual. Georgia’s CCSP fact sheet explains that some eligible participants contribute toward service costs
@@ -421,7 +421,7 @@ export default function CcspSourcePage() {
                         <ul className="flex flex-col gap-2">
                             {costQuestions.map((question) => (
                                 <li key={question} className="flex items-start gap-3">
-                                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                                     <span>{question}</span>
                                 </li>
                             ))}
@@ -432,7 +432,7 @@ export default function CcspSourcePage() {
                         </p>
                     </GuideSection>
 
-                    <GuideSection id="family" label="09 / Family guide" title="Support for Family Caregivers" accent="secondary">
+                    <GuideSection id="family" label="09 / Family guide" title="Support for Family Caregivers" accent="primary">
                         <p>
                             Caring for a parent, spouse, or adult loved one can affect work, rest, and family routines. Start by identifying
                             the tasks you handle now and where additional help would make the biggest difference.
@@ -466,7 +466,7 @@ export default function CcspSourcePage() {
                         id="choosing"
                         label="10 / Family guide"
                         title="Choosing a CCSP/SOURCE Home Care Provider"
-                        accent="secondary"
+                        accent="primary"
                     >
                         <p>
                             The right provider conversation should address both the care needed and how services will work in your home.
@@ -475,7 +475,7 @@ export default function CcspSourcePage() {
                         <ul className="flex flex-col gap-2">
                             {choosingQuestions.map((question) => (
                                 <li key={question} className="flex items-start gap-3">
-                                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
+                                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                                     <span>{question}</span>
                                 </li>
                             ))}
@@ -486,7 +486,7 @@ export default function CcspSourcePage() {
                         </p>
                     </GuideSection>
 
-                    <GuideSection id="why-americare" label="11 / Family guide" title="Why Families Consider AmeriCare" accent="secondary">
+                    <GuideSection id="why-americare" label="11 / Family guide" title="Why Families Consider AmeriCare" accent="primary">
                         <p>
                             AmeriCare provides personal care and companionship services for older adults and people with disabilities. Our
                             website identifies AmeriCare as state-licensed and ACHC accredited.
@@ -521,7 +521,7 @@ export default function CcspSourcePage() {
                         <p className="pt-1">
                             <a
                                 href="/speak-with-coordinator"
-                                className="inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
+                                className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white smooth hover:opacity-90 active:scale-90"
                             >
                                 Speak with a care coordinator <span aria-hidden="true">↗</span>
                             </a>
@@ -532,7 +532,7 @@ export default function CcspSourcePage() {
                         id="locations"
                         label="12 / Family guide"
                         title="CCSP/SOURCE Home Care in Metro Atlanta and Nearby Communities"
-                        accent="secondary"
+                        accent="primary"
                     >
                         <p>
                             AmeriCare’s website lists our Kennesaw office at 2950 Cherokee Street NW, Suite 626, Kennesaw, GA 30144.
@@ -551,12 +551,12 @@ export default function CcspSourcePage() {
                         id="faqs"
                         label="13 / Your questions"
                         title="Frequently Asked Questions About CCSP & SOURCE"
-                        accent="secondary"
+                        accent="primary"
                     >
-                        <FaqList items={faqs} accent="secondary" />
+                        <FaqList items={faqs} accent="primary" />
                         <div className="pt-4">
                             <StartCallout
-                                accent="secondary"
+                                accent="primary"
                                 eyebrow="Let’s start here"
                                 title="Looking for help at home?"
                                 text="You don’t need to have every answer. Tell us about your family, and we’ll discuss the next step."
@@ -578,7 +578,7 @@ export default function CcspSourcePage() {
                 </GuideLayout>
 
                 <GuideContact
-                    accent="secondary"
+                    accent="primary"
                     eyebrow="One conversation can help"
                     titleLead="Let’s discuss care"
                     titleAccent="for your loved one."
@@ -588,7 +588,7 @@ export default function CcspSourcePage() {
                 />
 
                 <GuideResources
-                    accent="secondary"
+                    accent="primary"
                     title="Official program information & resources"
                     links={[
                         { label: "Georgia DCH: CCSP overview", href: "https://medicaid.georgia.gov/media/3761/download" },
