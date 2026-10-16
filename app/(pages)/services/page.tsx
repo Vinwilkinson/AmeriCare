@@ -1,6 +1,5 @@
 import TopSection from "./components/TopSection";
 import ServiceCategories from "./components/ServiceCategories";
-import OurCareGivers from "./components/OurCaregivers";
 import NavigationComponent from "@/app/components/NavSection";
 import { generalMetadata } from "@/lib/MetaData";
 import { Metadata } from "next";
@@ -27,7 +26,6 @@ export default function ServicesPage() {
             <div className="relative z-10">
                 <TopSection />
                 <ServiceCategories />
-                <OurCareGivers />
             </div>
         </div>
     )
