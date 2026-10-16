@@ -71,7 +71,15 @@ export default function GuideHero({
                                     <li key={crumb.label} className="flex items-center gap-2">
                                         {index > 0 && <span aria-hidden="true">/</span>}
                                         {crumb.href ? (
-                                            <Link href={crumb.href} className="hover:text-primary smooth">
+                                            <Link
+                                                href={crumb.href}
+                                                className={clsx(
+                                                    "smooth",
+                                                    isPrimary
+                                                        ? "hover:text-[#3d7a26] dark:hover:text-primary"
+                                                        : "hover:text-[#1f7a86] dark:hover:text-secondary"
+                                                )}
+                                            >
                                                 {crumb.label}
                                             </Link>
                                         ) : (
@@ -119,7 +127,12 @@ export default function GuideHero({
                                     </Link>
                                     <Link
                                         href={secondaryCta.href}
-                                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 bg-white/70 dark:bg-white/5 px-6 sm:px-8 py-3 text-sm font-semibold text-gray-800 dark:text-white smooth hover:border-primary/50 hover:text-primary dark:hover:text-primary"
+                                        className={clsx(
+                                            "inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 bg-white/70 dark:bg-white/5 px-6 sm:px-8 py-3 text-sm font-semibold text-gray-800 dark:text-white smooth",
+                                            isPrimary
+                                                ? "hover:border-primary/50 hover:text-primary dark:hover:text-primary"
+                                                : "hover:border-secondary/50 hover:text-secondary dark:hover:text-secondary"
+                                        )}
                                     >
                                         {secondaryCta.text}
                                     </Link>
@@ -129,7 +142,10 @@ export default function GuideHero({
                                     Here to help:{" "}
                                     <a
                                         href={`tel:${phone.replace(/[^+\d]/g, "")}`}
-                                        className="font-semibold text-gray-800 dark:text-white hover:text-primary smooth"
+                                        className={clsx(
+                                            "font-semibold text-gray-800 dark:text-white smooth",
+                                            isPrimary ? "hover:text-primary" : "hover:text-secondary"
+                                        )}
                                     >
                                         {phone}
                                     </a>
@@ -154,7 +170,12 @@ export default function GuideHero({
 
                             <InViewWrapper animation={cardIn} className="relative">
                                 <>
-                                    <div className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] border border-primary/10 shadow-[0_40px_70px_-50px_rgba(4,13,18,0.7)]">
+                                    <div
+                                        className={clsx(
+                                            "relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.25rem] border shadow-[0_40px_70px_-50px_rgba(4,13,18,0.7)]",
+                                            isPrimary ? "border-primary/10" : "border-secondary/10"
+                                        )}
+                                    >
                                         <Image
                                             src={image.src}
                                             alt={image.alt}

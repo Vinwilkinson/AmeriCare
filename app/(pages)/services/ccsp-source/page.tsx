@@ -588,6 +588,7 @@ export default function CcspSourcePage() {
                 />
 
                 <GuideResources
+                    accent="secondary"
                     title="Official program information & resources"
                     links={[
                         { label: "Georgia DCH: CCSP overview", href: "https://medicaid.georgia.gov/media/3761/download" },

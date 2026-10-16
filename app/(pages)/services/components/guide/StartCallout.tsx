@@ -58,7 +58,12 @@ export default function StartCallout({
                 </Link>
                 <a
                     href={`tel:${secondaryCta.href.replace(/[^+\d]/g, "")}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 bg-white/80 dark:bg-white/5 px-5 py-2.5 text-sm font-semibold text-gray-800 dark:text-white smooth hover:border-primary/50 hover:text-primary dark:hover:text-primary"
+                    className={clsx(
+                        "inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 bg-white/80 dark:bg-white/5 px-5 py-2.5 text-sm font-semibold text-gray-800 dark:text-white smooth",
+                        isPrimary
+                            ? "hover:border-primary/50 hover:text-primary dark:hover:text-primary"
+                            : "hover:border-secondary/50 hover:text-secondary dark:hover:text-secondary"
+                    )}
                 >
                     {secondaryCta.text}
                 </a>
