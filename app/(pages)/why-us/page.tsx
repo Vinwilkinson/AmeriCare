@@ -1,36 +1,38 @@
-import TopSection from "./sections/TopSection";
-// import AboutUsSection from "./sections/AboutUsSection";
-import OurMissionSection from "./sections/OurMissionSection";
-import OurVisionSection from "./sections/OurVisionSection";
-import OurProcessSection from "./sections/OurProcessSection";
 import NavigationComponent from "@/app/components/NavSection";
-import Link from "next/link";
+import HeroSection from "./sections/HeroSection";
+import MissionSection from "./sections/MissionSection";
+import ValuesSection from "./sections/ValuesSection";
+import PathwaysSection from "./sections/PathwaysSection";
+import ProcessSection from "./sections/ProcessSection";
+import PeopleSection from "./sections/PeopleSection";
+import ExpectSection from "./sections/ExpectSection";
+import FaqSection from "./sections/FaqSection";
 import { generalMetadata } from "@/lib/MetaData";
 import { Metadata } from "next";
+import "./why-design.css";
 
-export const metadata: Metadata = {...generalMetadata, title: "Why AmeriCare | AmeriCare Atlanta"};
-
+export const metadata: Metadata = {
+    ...generalMetadata,
+    title: "Why AmeriCare | AmeriCare Atlanta",
+    description:
+        "Meet AmeriCare’s mission and approach to pediatric skilled nursing, adult personal support, and companionship in Georgia. Understand your next step toward care at home.",
+};
 
 export default function WhyUsPage() {
     return (
         <>
             <NavigationComponent />
 
-            <div className="relative z-10">
-                <TopSection />
-                <OurProcessSection />
-                {/* <AboutUsSection /> */}
-                <div className="dark:bg-darkBg bg-white grid-bg text-center sm:py-16 py-10 px-6">
-                    <Link
-                        href="/why-us/team"
-                        className="inline-flex items-center gap-2 text-primary font-semibold sm:text-2xl text-xl hover:gap-4 smooth"
-                    >
-                        Meet Our Team <span aria-hidden="true">→</span>
-                    </Link>
-                </div>
-                <OurMissionSection />
-                <OurVisionSection />
-            </div>
+            <main id="main" className="relative z-10 why-page pt-[8rem]">
+                <HeroSection />
+                <MissionSection />
+                <ValuesSection />
+                <PathwaysSection />
+                <ProcessSection />
+                <PeopleSection />
+                <ExpectSection />
+                <FaqSection />
+            </main>
         </>
     )
 }
