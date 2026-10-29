@@ -57,7 +57,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
             )}>
                 <>
                 {/* Logo */}
-                <Link href={"/"} className="flex text-forest dark:text-white gap-2 items-center shrink-0">
+                <Link href={"/"} className={clsx("flex text-forest gap-2 items-center shrink-0", !isHome && "dark:text-white")}>
                     <Image
                         src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
                         alt="AmeriCare Logo"
@@ -71,8 +71,8 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
 
                 {/* Nav links — centered */}
                 <nav className={clsx(
-                    "hidden lg:flex items-center justify-center gap-1 h-fit text-[#405148] dark:text-white text-[0.95rem] font-semibold",
-                    isHome ? "" : variation && inViewContainer ? "text-white" : ""
+                    "hidden lg:flex items-center justify-center gap-1 h-fit text-[#405148] text-[0.95rem] font-semibold",
+                    isHome ? "" : clsx("dark:text-white", variation && inViewContainer && "text-white")
                 )}>
                     <Link className={clsx(
                         "px-3.5 py-2 border-b-2 whitespace-nowrap hover:text-leaf smooth",
@@ -95,7 +95,10 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             Services <FaChevronDown className={clsx("text-xs transition-transform", servicesOpen && "rotate-180")} />
                         </Link>
                         {servicesOpen && (
-                            <div className="absolute top-full left-0 mt-1 bg-white dark:bg-darkBg border border-black/10 dark:border-white/10 rounded-xl shadow-xl py-2 min-w-[250px] z-50">
+                            <div className={clsx(
+                                "absolute top-full left-0 mt-1 bg-white border border-black/10 rounded-xl shadow-xl py-2 min-w-[250px] z-50",
+                                !isHome && "dark:bg-darkBg dark:border-white/10"
+                            )}>
                                 <Link className={clsx(
                                     "block px-5 py-2.5 hover:bg-mint hover:text-forest smooth",
                                     isActive("/services") && "text-leaf font-semibold"
@@ -125,7 +128,10 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             About <FaChevronDown className={clsx("text-xs transition-transform", aboutOpen && "rotate-180")} />
                         </button>
                         {aboutOpen && (
-                            <div className="absolute top-full left-0 mt-1 bg-white dark:bg-darkBg border border-black/10 dark:border-white/10 rounded-xl shadow-xl py-2 min-w-[180px] z-50">
+                            <div className={clsx(
+                                "absolute top-full left-0 mt-1 bg-white border border-black/10 rounded-xl shadow-xl py-2 min-w-[180px] z-50",
+                                !isHome && "dark:bg-darkBg dark:border-white/10"
+                            )}>
                                 <Link className={clsx(
                                     "block px-5 py-2.5 hover:bg-mint hover:text-forest smooth",
                                     isActive("/why-us") && "text-leaf font-semibold"
@@ -203,12 +209,12 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                     )} onClick={handleClick}>
                         <div className={clsx(
                             "top-0 origin-left absolute left-0 w-9 h-[3px] smooth",
-                            isNavOpen ? "rotate-45 translate-x-1 -translate-y-1 bg-leaf" : "dark:bg-white bg-forest"
+                            isNavOpen ? "rotate-45 translate-x-1 -translate-y-1 bg-leaf" : clsx("bg-forest", !isHome && "dark:bg-white")
                         )}></div>
-                        <div className={clsx("left-0 w-9 h-[3px] smooth", isNavOpen ? "bg-leaf translate-x-5 scale-x-[1.5]" : "dark:bg-white bg-forest")}></div>
+                        <div className={clsx("left-0 w-9 h-[3px] smooth", isNavOpen ? "bg-leaf translate-x-5 scale-x-[1.5]" : clsx("bg-forest", !isHome && "dark:bg-white"))}></div>
                         <div className={clsx(
                             "bottom-0 origin-right absolute left-0 w-9 h-[3px] smooth",
-                            isNavOpen ? "-rotate-45 -translate-x-2 -translate-y-5 bg-leaf" : "dark:bg-white bg-forest"
+                            isNavOpen ? "-rotate-45 -translate-x-2 -translate-y-5 bg-leaf" : clsx("bg-forest", !isHome && "dark:bg-white")
                         )}></div>
                     </div>
                 </div>
