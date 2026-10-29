@@ -1,18 +1,17 @@
 "use client"
 
 import { useInView } from "react-intersection-observer";
-import { Playfair_Display } from "next/font/google";
+import { Figtree } from "next/font/google";
 import clsx from "clsx";
 import ScrollToTop from "react-scroll-to-top";
 import NavigationComponent from "../components/NavSection";
-import CustomBtn from "../components/CustomBtn";
 import { useEffect, useRef, useState } from "react";
 import { isIOS } from "@/lib";
 import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 
-
-const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
-
+const FontFamily = Figtree({ subsets: ["latin"], weight: ["500", "600", "700", "800"] });
 
 export default function HeroSection() {
   const [isIOSDevice, setIsIOSDevice] = useState<boolean>(false);
@@ -53,10 +52,17 @@ export default function HeroSection() {
 
   return (
     <>
-      <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{ zIndex: 100 }} />
+      <ScrollToTop smooth className="grid place-items-center hover:bg-forest active:scale-90 smooth bg-leaf text-white rounded-full" style={{ zIndex: 100 }} />
       <NavigationComponent inViewContainer={inViewContainer} variation="home" />
 
-      <div ref={containerRef} id="top" className="hero pb-[12vw] pt-[7.5vw] isolate relative z-10 bg-primary/25 dark:bg-darkBg dark:text-white text-black after:bg-white dark:after:bg-darkBg">
+      <div
+        ref={containerRef}
+        id="top"
+        className={clsx(
+          FontFamily.className,
+          "hero pb-[12vw] pt-[7.5vw] isolate relative z-10 bg-cream text-forest after:bg-white"
+        )}
+      >
         <div className="absolute top-0 left-0 w-full h-full">
           {!isIOSDevice ?
             (<video
@@ -65,7 +71,7 @@ export default function HeroSection() {
               controls={false}
               width={1000}
               ref={videoRef}
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-55"
               autoPlay
               loop
               muted
@@ -73,35 +79,44 @@ export default function HeroSection() {
             :
             (<Image
               src={"https://americare.sirv.com/ios-bg.png"}
-              alt="IOS Bg"
+              alt="AmeriCare caregiver supporting a client at home"
               height={2160}
               width={3840}
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-55"
             />)
           }
         </div>
 
-        <div className="relative sm:min-h-[calc(48vh)] min-h-[calc(100vh-10rem)] max-w-[1400px] my-0 mx-auto py-0 px-[3em] flex flex-col items-center z-30 justify-center text-center">
-          <span className={clsx(FontFamily.className, "2xl:text-5xl sm:text-4xl text-2xl drop-shadow-md opacity-80")}>AmeriCare</span>
-          <span className="pt-2 pb-1 2xl:text-7xl sm:text-5xl text-4xl drop-shadow-md font-semibold">Consistently Kind, Every Time</span>
-          <span className="2xl:text-2xl mb-10 sm:text-xl text-lg opacity-60 drop-shadow-md">Compassionate Care, Right at Home</span>
-          <div className="flex gap-3 flex-wrap justify-center">
-            <CustomBtn
-              linkHref="/check-care-options"
-              text="Check Care Options"
-              noBorder
-              inHero
-              customClass="sm:py-5 py-4"
-            />
-            <CustomBtn
-              linkHref="/speak-with-coordinator"
-              text="Speak With a Coordinator"
-              noBorder
-              customClass="sm:py-5 py-4 after:bg-transparent text-primary border-primary hover:text-white hover:border-transparent"
-            />
+        {/* White/cream fades so text stays readable on any background */}
+        <div className="absolute inset-0 z-[5] bg-gradient-to-b from-cream/95 via-cream/40 to-cream/80" />
+        <div className="absolute inset-0 z-[6] bg-[radial-gradient(ellipse_70%_55%_at_50%_42%,rgba(250,249,245,0.92)_0%,rgba(250,249,245,0.55)_42%,rgba(250,249,245,0)_72%)]" />
+
+        <div className="relative sm:min-h-[calc(48vh)] min-h-[calc(100vh-10rem)] max-w-[1100px] my-0 mx-auto py-0 px-[1.5rem] flex flex-col items-center z-30 justify-center text-center">
+          <h1 className="text-forest font-extrabold tracking-[-0.03em] leading-[1.05] text-balance sm:text-[clamp(2.75rem,6vw,4.75rem)] text-[clamp(2.25rem,9vw,3rem)]">
+            Care that feels like home
+          </h1>
+          <p className="pt-4 pb-2 max-w-[38rem] text-ink/90 font-medium leading-relaxed sm:text-[clamp(1.05rem,2vw,1.45rem)] text-[1.05rem]">
+            Compassionate in-home care for children and adults,
+            <br className="hidden sm:block" />
+            {" "}with support your family can count on.
+          </p>
+          <div className="flex gap-3 flex-wrap justify-center mt-8">
+            <Link
+              href="/check-care-options"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-forest text-white font-bold sm:px-8 sm:py-4 px-6 py-3.5 text-[0.95rem] sm:text-base shadow-[0_8px_24px_rgba(32,87,53,0.22)] hover:bg-[#174528] hover:-translate-y-0.5 active:translate-y-0 smooth"
+            >
+              Check Care Options
+              <FaArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/speak-with-coordinator"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-mint text-forest border border-[#b9d4c0] font-bold sm:px-8 sm:py-4 px-6 py-3.5 text-[0.95rem] sm:text-base hover:bg-white hover:border-leaf smooth"
+            >
+              Speak With a Coordinator
+              <FaArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
-        <div className="absolute top-[-0.1%] left-0 w-full h-[100.2%] z-10 bg-green-800/25"></div>
       </div>
     </>
   )

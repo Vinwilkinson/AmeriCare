@@ -1,12 +1,15 @@
 import HeroSection from "./HomePage Sections/HeroSection";
-import OurServicesSection from "./HomePage Sections/OurServicesSection";
-import MottoSection from "./HomePage Sections/MottoSection";
-import OurMissionSection from "./HomePage Sections/OurMissionSection";
-import TestimonialMarquee from "./HomePage Sections/TestimonialMarquee";
-import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
-import OurServiceMiniSection from "./HomePage Sections/OurServiceMiniSection";
+import ProofStripSection from "./HomePage Sections/ProofStripSection";
+import AudienceSection from "./HomePage Sections/AudienceSection";
+import ServicesGridSection from "./HomePage Sections/ServicesGridSection";
+import ProgramsSection from "./HomePage Sections/ProgramsSection";
+import WhySplitSection from "./HomePage Sections/WhySplitSection";
+import StepsSection from "./HomePage Sections/StepsSection";
+import TeamBandSection from "./HomePage Sections/TeamBandSection";
+import ResourcesGridSection from "./HomePage Sections/ResourcesGridSection";
+import CareersBandSection from "./HomePage Sections/CareersBandSection";
+import LeadFormSection from "./HomePage Sections/LeadFormSection";
 import { Toaster } from "react-hot-toast";
-import ResourceCards from "./(pages)/resources/components/ResourceCards";
 
 
 export default function page() {
@@ -24,13 +27,16 @@ export default function page() {
                 }
             />
             <HeroSection />
-            <ResourceCards />
-            <OurServiceMiniSection />
-            <OurServicesSection />
-            <MottoSection />
-            <OurMissionSection />
-            <TestimonialMarquee />
-            <JoinTeamSection />
+            <ProofStripSection />
+            <AudienceSection />
+            <ServicesGridSection />
+            <ProgramsSection />
+            <WhySplitSection />
+            <StepsSection />
+            <TeamBandSection />
+            <ResourcesGridSection />
+            <CareersBandSection />
+            <LeadFormSection />
         </>
     )
 }
