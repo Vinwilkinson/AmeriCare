@@ -8,10 +8,43 @@ import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 
 export default function LeadFormSection() {
     const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
+        if (submitting) return;
+
+        const form = e.currentTarget;
+        const data = new FormData(form);
+
+        setSubmitting(true);
+        setError(null);
+
+        try {
+            const res = await fetch("/api/call-back", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    firstName: data.get("first"),
+                    lastName: data.get("last"),
+                    phone: data.get("phone"),
+                    email: data.get("email") || "",
+                    who: data.get("who"),
+                    help: data.get("help") || "",
+                    consent: data.get("consent") === "on",
+                }),
+            });
+
+            if (!res.ok) throw new Error("Submission failed");
+
+            form.reset();
+            setSubmitted(true);
+        } catch {
+            setError("Something went wrong. Please try again or call us at (404) 494-2187.");
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     return (
@@ -139,17 +172,24 @@ export default function LeadFormSection() {
                                 </div>
 
                                 <label className="flex gap-3 items-start text-[0.88rem] text-muted leading-relaxed cursor-pointer">
-                                    <input type="checkbox" required className="mt-1 accent-[#397b4b] w-4 h-4 shrink-0" />
+                                    <input type="checkbox" name="consent" required className="mt-1 accent-[#397b4b] w-4 h-4 shrink-0" />
                                     <span>
                                         I agree that AmeriCare may contact me about this inquiry. I understand this form should not include private medical details.
                                     </span>
                                 </label>
 
+                                {error && (
+                                    <p role="alert" className="text-sm text-red-700 leading-relaxed">
+                                        {error}
+                                    </p>
+                                )}
+
                                 <button
                                     type="submit"
-                                    className="inline-flex items-center justify-center gap-2 rounded-full bg-forest text-white font-bold px-8 py-4 hover:bg-[#174528] smooth mt-1"
+                                    disabled={submitting}
+                                    className="inline-flex items-center justify-center gap-2 rounded-full bg-forest text-white font-bold px-8 py-4 hover:bg-[#174528] smooth mt-1 disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    Request a Call Back →
+                                    {submitting ? "Sending…" : "Request a Call Back →"}
                                 </button>
 
                                 <p className="text-[0.78rem] text-muted leading-relaxed">

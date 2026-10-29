@@ -592,3 +592,84 @@ export const generateAcknowledgementEmail = (firstName: string) => `
     </body>
     </html>
 `;
+
+interface CallBackLeadParams {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    who: string;
+    help: string;
+}
+
+export const callBackLead = ({ firstName, lastName, phone, email, who, help }: CallBackLeadParams) => {
+    const username = `${firstName} ${lastName}`;
+    return (`
+        <html>
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+                <style>
+                    body { font-family: "Quicksand", sans-serif; font-weight: 500; background-color: #eee; color: #000; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+                    .container { width: 100%; max-width: 600px; padding: 1rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.2); }
+                    .header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid #444; }
+                    .header img { height: 60px; }
+                    .content { padding: 2rem 1rem; }
+                    .details { font-size: 1rem; line-height: 1.5; }
+                    .details p { margin: 0.5rem 0; }
+                    .details b { opacity: 0.7; }
+                    .badge { display: inline-block; background-color: #397b4b; color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header"><img src="https://americare.sirv.com/icons/logo-png.png" alt="Company Logo"></div>
+                    <div class="content">
+                        <span class="badge">Callback Request</span>
+                        <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>${username}</strong> requested a call back.</p>
+                        <div class="details">
+                            <p><b>Name:</b> ${username}</p>
+                            <p><b>Phone:</b> ${phone}</p>
+                            <p><b>Email:</b> ${email || "Not provided"}</p>
+                            <p><b>Who needs care:</b> ${who}</p>
+                            <p><b>Looking for:</b> ${help || "Not specified"}</p>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+    `);
+};
+
+export const callBackConfirmation = ({ firstName, lastName }: { firstName: string; lastName: string }) => `
+    <html>
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+            <style>
+                body { font-family: "Quicksand", sans-serif; font-weight: 500; background-color: #f8f9fa; color: #212529; }
+                .container { width: 100%; max-width: 600px; margin: auto; padding: 1rem; background-color: #fff; border: 1px solid #dee2e6; border-radius: 0.25rem; }
+                .header { text-align: center; padding-bottom: 1rem; border-bottom: 1px solid #dee2e6; }
+                .content { padding-top: 1rem; font-size: 1rem; line-height: 1.6; }
+                .footer { padding-top: 1rem; border-top: 1px solid #dee2e6; text-align: center; font-size: 0.875rem; color: #6c757d; }
+                .cta { display: inline-block; background-color: #397b4b; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; margin-top: 1rem; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header"><img src="https://americare.sirv.com/icons/logo-png.png" alt="Company Logo" height="50"></div>
+                <div class="content">
+                    <p>Dear ${firstName} ${lastName},</p>
+                    <p>Thank you for reaching out to AmeriCare. We have received your call back request and a member of our team will follow up with you soon.</p>
+                    <p>If you need immediate assistance, please call us at <strong>(404) 494-2187</strong>.</p>
+                    <p>We look forward to speaking with you.</p>
+                    <p>Warm regards,<br><strong>The AmeriCare Team</strong></p>
+                    <a href="tel:4044942187" class="cta">Call (404) 494-2187</a>
+                </div>
+                <div class="footer">&copy; ${new Date().getFullYear()} AmeriCare Services Inc. All rights reserved.</div>
+            </div>
+        </body>
+    </html>
+`;
