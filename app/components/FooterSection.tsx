@@ -1,121 +1,128 @@
 import Image from "next/image";
 import clsx from "clsx";
-import CustomBtn from "./CustomBtn";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import { FaMailBulk, FaPhoneSquareAlt } from "react-icons/fa";
+import { FaArrowRight, FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { fadeIn } from "@/lib/AnimationVariants";
 import InViewWrapper from "./InViewWrapper";
+
+type FooterLink = { text: string; href: string };
+
+const findCareLinks: FooterLink[] = [
+    { text: "Our Services", href: "/services" },
+    { text: "Check Care Options", href: "/check-care-options" },
+    { text: "Pediatric Care - GAPP", href: "/services/gapp" },
+    { text: "Adult Care - CCSP / SOURCE", href: "/services/ccsp-source" },
+];
+
+const aboutLinks: FooterLink[] = [
+    { text: "Our Story", href: "/why-us#mission" },
+    { text: "Why AmeriCare", href: "/why-us" },
+    { text: "Meet Our Team", href: "/why-us/team" },
+    { text: "Testimonials", href: "/testimonials" },
+];
+
+const resourceLinks: FooterLink[] = [
+    { text: "Care Resources", href: "/resources" },
+    { text: "Careers", href: "/careers" },
+    { text: "Contact Us", href: "/speak-with-coordinator" },
+];
+
+const socialLinks = [
+    { href: "https://facebook.com/AmeriCareHealthServices", label: "Facebook", Icon: FaFacebookF },
+    { href: "https://www.instagram.com/americarehealth", label: "Instagram", Icon: FaInstagram },
+    { href: "https://linkedin.com/company/americare-health-inc", label: "LinkedIn", Icon: FaLinkedin },
+];
+
+function LinkColumn({ title, links }: { title: string; links: FooterLink[] }) {
+    return (
+        <div className="flex flex-col gap-3">
+            <span className="font-semibold text-white/55 text-xs uppercase tracking-[0.18em]">{title}</span>
+            {links.map((link) => (
+                <Link key={link.text} className="hover:text-mint smooth w-fit" href={link.href}>
+                    {link.text}
+                </Link>
+            ))}
+        </div>
+    );
+}
 
 export default function FooterSection() {
 
     return (
         <div className={clsx(
-            "dark:bg-darkBg bg-white/90 text-white sm:text-xl text-sm"
+            "dark:bg-darkBg bg-white/90 text-white sm:text-base text-sm"
         )}>
-            <InViewWrapper animation={fadeIn} className="pt-12 pb-6 sm:px-[5vw] px-4 bg-themeBlack sm:rounded-t-[3rem] rounded-t-3xl">
+            {/* Tagline strip */}
+            <div className="bg-cream text-ink text-center py-4 px-6 sm:text-base text-sm">
+                Compassionate care. Stronger families.
+            </div>
+
+            <InViewWrapper animation={fadeIn} className="pt-10 pb-6 sm:px-[5vw] px-4 bg-forest">
                 <>
-                    {/* Top row: Logo + CTAs */}
-                    <div className="border-b border-b-white/25 pb-6 flex flex-wrap justify-between gap-4 items-center">
+                    {/* Top row: Logo + CTA */}
+                    <div className="border-b border-white/20 pb-6 flex flex-wrap justify-between gap-4 items-center">
                         <Image
                             src={"https://americare.sirv.com/icons/logo-png.png"}
                             alt="AmeriCare Logo"
                             height={300}
                             width={300}
                             priority
-                            className="w-44 smooth"
+                            className="w-40 smooth"
                         />
-                        <div className="flex gap-2">
-                            <CustomBtn
-                                customClass="bg-black/10"
-                                linkHref="/careers"
-                                text="Join Us"
-                                noBorder={true}
-                            />
-                            <CustomBtn
-                                customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
-                                linkHref="tel:4044942187"
-                                noBorder={true}
-                                external
-                                text="Speak with Coordinator"
-                            />
-                        </div>
+                        <Link
+                            href="/speak-with-coordinator"
+                            className="group flex items-center gap-2 bg-mint text-forest font-semibold rounded-full sm:px-6 px-5 sm:py-3 py-2.5 hover:bg-white smooth w-fit"
+                        >
+                            Speak With a Coordinator
+                            <FaArrowRight className="smooth group-hover:translate-x-1" />
+                        </Link>
                     </div>
 
-                    {/* Middle row: Contact + Link columns */}
-                    <div className="py-8 grid grid-cols-1 md:grid-cols-12 gap-8">
-                        {/* Contact info — left side */}
-                        <div className="md:col-span-4 flex flex-col gap-4">
-                            <div className="flex flex-col gap-2">
-                                <span className="font-semibold">Address</span>
-                                <span className="opacity-80 leading-relaxed">2950 Cherokee St, NW Suite 626, Kennesaw, GA 30144</span>
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                <span className="flex gap-2 items-center">
-                                    <FaPhoneSquareAlt className="text-2xl smooth group-hover:text-primary shrink-0" />
-                                    Call <Link className="text-primary" href={"tel:4044942187"}>(404)-494-2187</Link> for a free consultation
+                    {/* Columns */}
+                    <div className="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {/* Contact */}
+                        <div className="flex flex-col gap-4">
+                            <span className="font-semibold text-white/55 text-xs uppercase tracking-[0.18em]">Contact</span>
+                            <div className="flex flex-col gap-3">
+                                <Link className="flex gap-3 items-center hover:text-mint smooth" href={"tel:4044942187"}>
+                                    <FaPhone className="text-base shrink-0" />
+                                    <span>(404) 494-2187</span>
+                                </Link>
+                                <Link className="flex gap-3 items-center hover:text-mint smooth break-all" href={"mailto:support@americareinhome.com"}>
+                                    <FaEnvelope className="text-base shrink-0" />
+                                    <span>support@americareinhome.com</span>
+                                </Link>
+                                <span className="flex gap-3 items-start leading-relaxed">
+                                    <FaMapMarkerAlt className="text-base shrink-0 mt-1" />
+                                    <span>2950 Cherokee St, NW, Suite 626, Kennesaw, GA 30144</span>
                                 </span>
-                                <span className="flex gap-2 items-center">
-                                    <FaMailBulk className="text-2xl smooth group-hover:text-primary shrink-0" />
-                                    <Link className="text-primary" href={"mailto:support@americareinhome.com"}>support@americareinhome.com</Link>
-                                </span>
                             </div>
-                            <div className="flex gap-4 mt-2">
-                                <Link href={"https://facebook.com/AmeriCareHealthServices"} target="_blank">
-                                    <FaFacebookF className="text-2xl hover:text-primary smooth" />
-                                </Link>
-                                <Link href={"https://linkedin.com/company/americare-health-inc"} target="_blank">
-                                    <FaLinkedin className="text-2xl hover:text-primary smooth" />
-                                </Link>
-                                <Link href={"https://www.instagram.com/americarehealth"} target="_blank">
-                                    <FaInstagram className="text-2xl hover:text-primary smooth" />
-                                </Link>
-                                <Link href={"tel:4044942187"}>
-                                    <FaPhoneSquareAlt className="text-2xl hover:text-primary smooth" />
-                                </Link>
+                            <div className="flex gap-4 mt-1">
+                                {socialLinks.map(({ href, label, Icon }) => (
+                                    <Link
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        aria-label={label}
+                                        className="hover:text-mint smooth"
+                                    >
+                                        <Icon className="text-lg" />
+                                    </Link>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Link columns — right side */}
-                        <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
-                            {/* Care */}
-                            <div className="flex flex-col gap-3">
-                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">Care</span>
-                                <Link className="hover:text-primary smooth" href="/services">Services</Link>
-                                <Link className="hover:text-primary smooth" href="/check-care-options">Check Care Options</Link>
-                                <Link className="hover:text-primary smooth" href="/speak-with-coordinator">Speak with Coordinator</Link>
-                                <Link className="hover:text-primary smooth" href="/book-an-appointment">Book an Appointment</Link>
-                            </div>
-
-                            {/* About */}
-                            <div className="flex flex-col gap-3">
-                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">About</span>
-                                <Link className="hover:text-primary smooth" href="/why-us">Why AmeriCare</Link>
-                                <Link className="hover:text-primary smooth" href="/why-us/team">Meet Our Team</Link>
-                                <Link className="hover:text-primary smooth" href="/testimonials">Testimonials</Link>
-                                <Link className="hover:text-primary smooth" href="/resources">Resources</Link>
-                                <Link className="hover:text-primary smooth" href="/careers">Careers</Link>
-                                <Link className="hover:text-primary smooth" href="/policy">Privacy Policy</Link>
-                            </div>
-
-                            {/* Programs */}
-                            <div className="flex flex-col gap-3">
-                                <span className="font-semibold text-white/60 text-sm uppercase tracking-wider">Programs</span>
-                                <Link className="hover:text-primary smooth" href="/services/gapp">GAPP</Link>
-                                <Link className="hover:text-primary smooth" href="/services/ccsp-source">CCSP</Link>
-                                <Link className="hover:text-primary smooth" href="/services/ccsp-source">SOURCE</Link>
-                            </div>
-                        </div>
+                        <LinkColumn title="Find Care" links={findCareLinks} />
+                        <LinkColumn title="About AmeriCare" links={aboutLinks} />
+                        <LinkColumn title="Resources" links={resourceLinks} />
                     </div>
 
                     {/* Bottom bar */}
-                    <div className="flex py-6 border-t border-t-white/25 text-base max-md:text-sm justify-center">
-                        <p className="flex items-center justify-between w-full">
-                            <span>Designed by: <Link href={"https://fabiconcept.online/"} className="text-primary">Fabiconcept</Link></span>
-                            <span>
-                                See our{" "}
-                                <Link className="text-primary" href={"/policy"}>Privacy Policy</Link>.
-                            </span>
+                    <div className="flex py-5 border-t border-white/20 text-xs max-md:text-xs justify-center text-white/70">
+                        <p className="flex items-center justify-between w-full flex-wrap gap-2">
+                            <span>&copy; {new Date().getFullYear()} AmeriCare Services Inc. All rights reserved.</span>
+                            <Link className="hover:text-mint smooth" href={"/policy"}>Privacy Policy</Link>
                         </p>
                     </div>
                 </>
