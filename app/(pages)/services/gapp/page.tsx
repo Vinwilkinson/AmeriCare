@@ -1,6 +1,4 @@
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import GuideHero from "../components/guide/GuideHero";
 import GuideLayout from "../components/guide/GuideLayout";
 import GuideSection from "../components/guide/GuideSection";
@@ -10,12 +8,15 @@ import StartCallout from "../components/guide/StartCallout";
 import GuideContact from "../components/guide/GuideContact";
 import GuideResources from "../components/guide/GuideResources";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Georgia Pediatric Program (GAPP) | AmeriCare",
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Georgia Pediatric Program (GAPP)",
     description:
         "A family guide to Georgia's Pediatric Program (GAPP): what it covers, who may qualify, how to apply, costs, FAQs, and how AmeriCare supports pediatric home care.",
-};
+    path: "/services/gapp",
+});
 
 const PHONE = "(404) 494-2187";
 

@@ -1,6 +1,4 @@
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import GuideHero from "../components/guide/GuideHero";
 import GuideLayout from "../components/guide/GuideLayout";
 import GuideSection from "../components/guide/GuideSection";
@@ -10,12 +8,15 @@ import StartCallout from "../components/guide/StartCallout";
 import GuideContact from "../components/guide/GuideContact";
 import GuideResources from "../components/guide/GuideResources";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "CCSP & SOURCE Home Care in Georgia | AmeriCare",
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "CCSP & SOURCE Home Care in Georgia",
     description:
-        "A family guide to Georgia Medicaid CCSP and SOURCE: how the programs differ, personal care services, eligibility, how to apply, costs, family caregiver support, and FAQs.",
-};
+        "A family guide to Georgia Medicaid CCSP and SOURCE — personal care services, eligibility, how to apply, costs, family caregiver support, and FAQs.",
+    path: "/services/ccsp-source",
+});
 
 const PHONE = "(404) 494-2187";
 const SCREENING_PHONE = "1-866-552-4464";

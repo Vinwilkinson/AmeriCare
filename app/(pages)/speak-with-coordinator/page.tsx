@@ -1,14 +1,16 @@
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import CoordinatorWizard from "./components/CoordinatorWizard";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Speak With a Care Coordinator | AmeriCare Atlanta",
-    description: "Request a personal conversation with an AmeriCare care coordinator. We'll call, text, or email you within one business day to guide you through care options.",
-};
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Speak With a Care Coordinator",
+    description:
+        "Request a personal conversation with an AmeriCare care coordinator. We'll call, text, or email you within one business day to guide you through care options.",
+    path: "/speak-with-coordinator",
+});
 
 export default function SpeakWithCoordinatorPage() {
     return (

@@ -2,11 +2,17 @@ import TopSection from "./components/TopSection";
 import ResourceCards from "./components/ResourceCards";
 import BottomCTA from "./components/BottomCTA";
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 
-export const metadata: Metadata = {...generalMetadata, title: "Resources | AmeriCare Atlanta"};
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Caregiver Resources & Guides",
+    description:
+        "Free home care guides, checklists, and resources for families navigating in-home care for seniors, medically fragile children, and adults across Atlanta.",
+    path: "/resources",
+});
 
 export default function ResourcesPage() {
     return (

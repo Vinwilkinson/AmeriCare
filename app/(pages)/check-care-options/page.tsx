@@ -1,14 +1,16 @@
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import CarePathWizard from "./components/CarePathWizard";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Check Care Options | AmeriCare Atlanta",
-    description: "Find the right care for your family. Answer a few questions and AmeriCare will guide you to the best home healthcare options for children and adults in Atlanta.",
-};
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Check Your Care Options",
+    description:
+        "Find the right home care for your family. Answer a few quick questions and AmeriCare will guide you to the best care options for children and adults in Atlanta.",
+    path: "/check-care-options",
+});
 
 export default function CheckCareOptionsPage() {
     return (

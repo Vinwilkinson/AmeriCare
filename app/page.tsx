@@ -1,3 +1,13 @@
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Atlanta's Award-Winning Home Health Provider",
+    description:
+        "AmeriCare delivers personalized in-home care for seniors, adults, and medically fragile children across Atlanta and Georgia — CNA, PCA, pediatric nursing, and companion care.",
+    path: "/",
+});
+
 import HeroSection from "./HomePage Sections/HeroSection";
 import ProofStripSection from "./HomePage Sections/ProofStripSection";
 import AudienceSection from "./HomePage Sections/AudienceSection";

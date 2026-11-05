@@ -7,16 +7,17 @@ import ProcessSection from "./sections/ProcessSection";
 import PeopleSection from "./sections/PeopleSection";
 import ExpectSection from "./sections/ExpectSection";
 import FaqSection from "./sections/FaqSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import "./why-design.css";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Why AmeriCare | AmeriCare Atlanta",
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Why Choose AmeriCare",
     description:
-        "Meet AmeriCare’s mission and approach to pediatric skilled nursing, adult personal support, and companionship in Georgia. Understand your next step toward care at home.",
-};
+        "Meet AmeriCare's mission and approach to pediatric skilled nursing, adult personal support, and companionship in Georgia. Understand your next step toward care at home.",
+    path: "/why-us",
+});
 
 export default function WhyUsPage() {
     return (

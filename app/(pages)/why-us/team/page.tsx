@@ -13,16 +13,17 @@ import MilestonesSection from "./sections/MilestonesSection";
 import FoundationSection from "./sections/FoundationSection";
 import FaqSection from "./sections/FaqSection";
 import ClosingSection from "./sections/ClosingSection";
-import { generalMetadata } from "@/lib/MetaData";
-import { Metadata } from "next";
 import "./team-design.css";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Our Leadership & Home Care Team in Georgia | AmeriCare",
+import { pageMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+    title: "Our Leadership & Home Care Team in Georgia",
     description:
-        "Meet AmeriCare’s executive, nursing, and support teams behind pediatric skilled nursing, GAPP, and adult CCSP/SOURCE home care in Georgia.",
-};
+        "Meet the AmeriCare leadership team and caregivers committed to compassionate, high-quality home health services for families across Atlanta and Georgia.",
+    path: "/why-us/team",
+});
 
 export default function TeamPage() {
     return (

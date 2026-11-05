@@ -1,14 +1,18 @@
 import InViewWrapper from '@/app/components/InViewWrapper';
 import NavigationComponent from '@/app/components/NavSection';
 import { fadeIn } from '@/lib/AnimationVariants';
-import { generalMetadata } from '@/lib/MetaData';
+import { pageMetadata } from '@/lib/MetaData';
 import clsx from 'clsx';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-export const metadata: Metadata = { ...generalMetadata, title: "Thank you | AmeriCare Atlanta" };
+export const metadata: Metadata = pageMetadata({
+    title: "Thank You",
+    description: "Thank you for reaching out to AmeriCare. Our team will be in touch with you shortly.",
+    path: "/thank-you",
+});
 
 
 export default function ThankYouPage() {

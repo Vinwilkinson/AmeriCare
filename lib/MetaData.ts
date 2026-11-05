@@ -1,145 +1,184 @@
 import { Metadata } from "next";
 
+// ─── Site constants ─────────────────────────────────────────────────────────
+export const SITE_URL = "https://americareinhome.com";
+export const SITE_NAME = "AmeriCare";
+export const SITE_TAGLINE = "AmeriCare Home Health | Atlanta's Award-Winning Home Health Provider";
+export const SITE_DESCRIPTION =
+    "Experience personalized in-home care delivered to your doorstep. Atlanta's top-rated home health care provider — award-winning CNA, PCA, pediatric nursing, and senior care services for your family.";
+
+export const OG_IMAGE = {
+    url: "https://americare.sirv.com/americare-bg.jpg",
+    width: 978,
+    height: 782,
+    alt: "AmeriCare caregiver assisting a senior client at home in Atlanta, Georgia",
+};
+
+// ─── Base metadata (shared by every page) ───────────────────────────────────
 export const generalMetadata: Metadata = {
-    title: 'AmeriCare Home Health | Atlanta’s Award Winning Home Health Provider',
-    description: "Experience personalized in home care delivered to your doorstep. Learn more about Atlanta’s top-rated home health care provider. Award-winning health services for your family's health and well-being. Looking for skilled home care, companionship, physical therapy and more? Contact us today!",
+    // Resolves relative image/url paths against this base — required by Next.js
+    metadataBase: new URL(SITE_URL),
+
+    title: {
+        default: SITE_TAGLINE,
+        // Page-level overrides become: "<page title> | AmeriCare"
+        template: "%s | AmeriCare",
+    },
+    description: SITE_DESCRIPTION,
+
     keywords: [
-        'home healthcare Atlanta',
-        'elderly care Atlanta',
-        'medically fragile children care Atlanta',
-        'compassionate caregivers',
-        'personalized care plans',
-        'in-home assessment',
-        'quality home care',
-        'senior home care Atlanta',
-        'professional caregivers Atlanta',
-        'Alzheimer’s care Atlanta',
-        'dementia care Atlanta',
-        'respite care Atlanta',
-        'end-of-life care Atlanta',
-        'hospice support Atlanta',
-        'home nursing Atlanta',
-        'in-home health services',
-        'customized care plans',
-        'family collaboration healthcare',
-        'trusted home healthcare',
-        'licensed caregivers',
-        'certified nursing assistants',
-        'registered nurses',
-        '24/7 home care services',
-        'rehabilitation care Atlanta',
-        'post-surgery home care',
-        'physical therapy at home',
-        'occupational therapy at home',
-        'speech therapy at home',
-        'holistic care plans',
-        'mental health support at home',
-        'emotional well-being care',
-        'home safety evaluations',
-        'chronic illness management',
-        'diabetes care at home',
-        'heart disease care at home',
-        'palliative care Atlanta',
-        'long-term care services',
-        'short-term care services',
-        'companionship services',
-        'home health aides',
-        'personal care assistants',
-        'meal preparation services',
-        'medication management',
-        'mobility assistance',
-        'bathing and grooming assistance',
-        'toileting and incontinence care',
-        'light housekeeping services',
-        'transportation services',
-        'elder care support',
-        'home health evaluations',
-        'caregiver matching service',
-        'personalized healthcare plans',
-        'senior living assistance',
-        'in-home support services',
-        'comprehensive home healthcare',
-        'care management services',
-        'telehealth services',
-        'virtual care consultations',
-        'at-home diagnostic services',
-        'health monitoring at home',
-        'special needs care Atlanta',
-        'caregiver support programs',
-        'home healthcare consulting',
-        'senior companionship Atlanta',
-        'caregiver training and education',
-        'home care for veterans',
-        'post-hospitalization care',
-        'orthopedic care at home',
-        'neurological care at home',
-        'stroke recovery at home',
-        'Parkinson’s care at home',
-        'multiple sclerosis care at home',
-        'home wound care',
-        'IV therapy at home',
-        'respiratory care at home',
-        'pediatric home care',
-        'child healthcare services',
-        'infant care at home',
-        'adolescent care at home',
-        'postpartum care at home',
-        'family health support',
-        'caregiver respite programs',
-        'home care assistance',
-        'senior care services',
-        'home care planning',
-        'private duty nursing',
-        'elder care management',
-        'personal home care',
-        'affordable home care services',
-        'home health monitoring',
-        'in-home medical care',
-        'licensed home health providers'  // Include relevant keywords from your list
+        // Brand & location
+        "AmeriCare", "AmeriCare home health", "AmeriCare Atlanta", "americareinhome.com",
+        // Service types
+        "home healthcare Atlanta", "in-home care Atlanta", "home health services Georgia",
+        "CNA jobs Georgia", "PCA jobs Atlanta", "personal care assistant Atlanta",
+        "certified nursing assistant Atlanta", "registered nurse home care Atlanta",
+        "LPN home care Georgia", "private duty nursing Atlanta",
+        // Audiences
+        "pediatric home care Atlanta", "GAPP Georgia", "Georgia Pediatric Program",
+        "medically fragile children care Atlanta", "senior home care Atlanta",
+        "elderly care Atlanta", "adult in-home care Atlanta",
+        // Conditions
+        "Alzheimer's care Atlanta", "dementia care Atlanta", "respite care Atlanta",
+        "stroke recovery at home", "Parkinson's care at home",
+        "multiple sclerosis care at home", "tracheostomy care", "G-tube care at home",
+        "seizure care at home", "chronic illness management at home",
+        // Services
+        "personal care ADLs", "medication management at home", "companionship services",
+        "home health aide Atlanta", "meal preparation services at home",
+        "bathing grooming assistance", "mobility assistance at home",
+        "light housekeeping home care", "transportation assistance seniors",
+        "post-surgery home care", "post-hospitalization care",
+        // Programs
+        "CCSP Georgia", "Community Care Services Program Atlanta",
+        "Medicaid home care Georgia", "Medicaid waiver Georgia",
+        // Trust signals
+        "award-winning home health Atlanta", "licensed home health providers Georgia",
+        "trusted caregivers Atlanta", "compassionate home care",
     ],
-    authors: [{name: "AmeriCare", url: "https://americareinhome.com/"}, {name: "Fabiconcept", url: "fabiconcept.online"}],  // Not provided in the information
-    creator: 'Calvin Wilkinson MPH',  // Company name as creator
+
+    authors: [
+        { name: "AmeriCare", url: SITE_URL },
+        { name: "Fabiconcept", url: "https://fabiconcept.online" },
+    ],
+    creator: "Calvin Wilkinson MPH",
+    publisher: "AmeriCare Services Inc.",
+
+    // ── Open Graph ────────────────────────────────────────────────────────────
     openGraph: {
-        title: 'AmeriCare Home Health | Atlanta’s Award Winning Home Health Provider',  // Consistent title
-        description: "Experience personalized in home care delivered to your doorstep. Learn more about Atlanta’s top-rated home health care provider. Award-winning health services for your family's health and well-being. Looking for skilled home care, companionship, physical therapy and more? Contact us today!",  // Consistent description
-        url: 'https://americareinhome.com/',  // Replace with your actual website URL
-        locale: 'en_US',  // Assuming US English content
-        images: [
+        type: "website",
+        siteName: SITE_NAME,
+        title: SITE_TAGLINE,
+        description: SITE_DESCRIPTION,
+        url: SITE_URL,
+        locale: "en_US",
+        images: [OG_IMAGE],
+    },
+
+    // ── Twitter / X card ─────────────────────────────────────────────────────
+    twitter: {
+        card: "summary_large_image",
+        site: "@AmeriCareInHome",
+        title: "Compassionate Home Healthcare | AmeriCare Atlanta",
+        description:
+            "AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children across Georgia. Free in-home assessment.",
+        images: [OG_IMAGE.url],
+    },
+
+    // ── Favicons & app icons ─────────────────────────────────────────────────
+    icons: {
+        icon: [
             {
-                url: 'https://americare.sirv.com/americare-bg.jpg', // Replace with a relevant AmeriCare image URL
-                width: 978,  // Adjust width for optimal display
-                height: 782,  // Adjust height for optimal display
-                alt: 'AmeriCare Caregiver Assisting Senior Client',  // Descriptive alt text
+                url: "https://americare.sirv.com/icons/Favicons/favicon-16x16.png",
+                sizes: "16x16",
+                type: "image/png",
+            },
+            {
+                url: "https://americare.sirv.com/icons/Favicons/favicon-32x32.png",
+                sizes: "32x32",
+                type: "image/png",
+            },
+            {
+                url: "https://americare.sirv.com/icons/Favicons/android-chrome-192x192.png",
+                sizes: "192x192",
+                type: "image/png",
+            },
+        ],
+        shortcut: "https://americare.sirv.com/icons/Favicons/favicon.ico",
+        apple: [
+            {
+                url: "https://americare.sirv.com/icons/Favicons/apple-touch-icon.png",
+                sizes: "180x180",
+                type: "image/png",
             },
         ],
     },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Compassionate Home Healthcare | AmeriCare Atlanta',  // Consistent title
-        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',  // Consistent description
-        images: ['https://www.americareinhome.com/why-ameri-care.jpg'],  // Matches the Why AmeriCare section photo
-    },
-    icons: {
-        // Consider using a favicon generator for various icon sizes
-        icon: 'https://americare.sirv.com/icons/Favicons/android-chrome-192x192.png',
-        shortcut: 'https://americare.sirv.com/icons/Favicons/android-chrome-512x512.png',
-        apple: 'https://americare.sirv.com/icons/Favicons/android-chrome-512x512.png',
-        other: {
-            rel: 'https://americare.sirv.com/icons/Favicons/favicon.ico',
-            url: 'https://americare.sirv.com/icons/Favicons/favicon.ico',
-        },
-    },
-    robots: {  // You can adjust these settings as needed for SEO strategy
-        index: true,  // Allow indexing by search engines
-        follow: true,  // Allow following links
-        nocache: true,  // Set cache-control to no-cache
+
+    // ── Crawl / robots ───────────────────────────────────────────────────────
+    robots: {
+        index: true,
+        follow: true,
         googleBot: {
-            index: true,  // Allow Google to index pages
-            follow: true,  // Allow Google to follow links
-            noimageindex: false,  // Allow Google to index images (consider for SEO)
-            'max-video-preview': -1,  // No limit on video previews
-            'max-image-preview': 'large',  // Allow large image previews
-            'max-snippet': -1,  // No limit on snippet length
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
         },
     },
+
+    // ── Canonical (relative paths resolved against metadataBase) ────────────
+    alternates: {
+        canonical: "/",
+    },
+
+    // ── App-specific ─────────────────────────────────────────────────────────
+    applicationName: SITE_NAME,
+    referrer: "origin-when-cross-origin",
+    category: "health",
 };
+
+// ─── Helper: build page-level metadata in one call ──────────────────────────
+// Usage in any page.tsx:
+//
+//   export const metadata = pageMetadata({
+//     title: "Services",
+//     description: "...",
+//     path: "/services",
+//   });
+//
+export function pageMetadata({
+    title,
+    description,
+    path,
+    ogImage,
+}: {
+    title: string;
+    description: string;
+    path: string;
+    ogImage?: typeof OG_IMAGE;
+}): Metadata {
+    const image = ogImage ?? OG_IMAGE;
+    const url = `${SITE_URL}${path}`;
+
+    return {
+        ...generalMetadata,
+        title,
+        description,
+        alternates: { canonical: path },
+        openGraph: {
+            ...generalMetadata.openGraph,
+            title,
+            description,
+            url,
+            images: [image],
+        },
+        twitter: {
+            ...generalMetadata.twitter,
+            title,
+            description,
+            images: [image.url],
+        },
+    };
+}

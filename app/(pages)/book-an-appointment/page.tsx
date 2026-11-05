@@ -1,10 +1,15 @@
 import NavigationComponent from '@/app/components/NavSection';
-import { generalMetadata } from '@/lib/MetaData';
 import { Metadata } from 'next';
 import BookAppointment from "@/app/HomePage Sections/BookAppointment";
 
-export const metadata: Metadata = { ...generalMetadata, title: "Book an Appointment | AmeriCare Atlanta" };
+import { pageMetadata } from "@/lib/MetaData";
 
+export const metadata: Metadata = pageMetadata({
+    title: "Book a Free Home Care Consultation",
+    description:
+        "Schedule your free in-home assessment with an AmeriCare care specialist. We serve Atlanta and surrounding communities in Georgia.",
+    path: "/book-an-appointment",
+});
 
 export default function BookAppointmentPage() {
     return (

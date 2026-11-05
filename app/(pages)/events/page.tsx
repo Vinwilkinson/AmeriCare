@@ -1,14 +1,16 @@
 import TopSection from "./components/TopSection";
 import EventsCalendar from "./components/EventsCalendar";
 import NavigationComponent from "@/app/components/NavSection";
-import { generalMetadata } from "@/lib/MetaData";
+
+import { pageMetadata } from "@/lib/MetaData";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-    ...generalMetadata,
-    title: "Events | AmeriCare Atlanta",
-    description: "AmeriCare's community events calendar for October 2026 through January 2027 - support groups, workshops, family activities, and our monthly parent webinar.",
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Community Events Calendar",
+    description:
+        "AmeriCare community events in Atlanta — caregiver support groups, family workshops, pediatric care webinars, and more.",
+    path: "/events",
+});
 
 export default function EventsPage() {
     return (
