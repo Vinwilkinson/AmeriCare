@@ -1,7 +1,5 @@
 import CareersHero from "./sections/CareersHero";
-import CareersContent from "./sections/CareersContent";
 import FormSection from "./sections/FormSection";
-import CareersCta from "./sections/CareersCta";
 import { Toaster } from "react-hot-toast";
 import NavigationComponent from "@/app/components/NavSection";
 
@@ -22,9 +20,7 @@ export default function CareersPage() {
 
             <div className="relative z-10">
                 <CareersHero />
-                <CareersContent />
                 <FormSection />
-                <CareersCta />
                 <Toaster
                     position="bottom-right"
                     toastOptions={{
