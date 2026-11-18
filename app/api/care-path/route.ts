@@ -43,10 +43,11 @@ export async function POST(req: NextRequest) {
         const leadResponse = await client.sendEmail(
             organisationName,
             organisationEmail,
-            `${firstName} ${lastName}`,
-            email,
+            organisationName,
+            organisationEmail,
             `New Care Path Lead: ${firstName} ${lastName}`,
-            leadHtml
+            leadHtml,
+            { name: `${firstName} ${lastName}`, email }
         );
 
         const leadResponseText = await leadResponse.text();
@@ -55,6 +56,7 @@ export async function POST(req: NextRequest) {
 
         if (!leadResponse.ok) {
             console.error("[care-path] Brevo lead email failed:", leadResponseText);
+            console.error("[care-path] Submission payload (for manual follow-up):", JSON.stringify(body));
             return NextResponse.json({ error: "Failed to send lead notification", details: leadResponseText }, { status: 500 });
         }
 

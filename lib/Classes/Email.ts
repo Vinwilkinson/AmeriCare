@@ -14,7 +14,8 @@ export class BrevoEmailClient {
         senderName: string,
         senderEmail: string,
         subject: string,
-        htmlContent: string
+        htmlContent: string,
+        replyTo?: { name?: string; email: string }
     ): Promise<Response> {
         const headers = new Headers({
             'accept': 'application/json',
@@ -33,6 +34,7 @@ export class BrevoEmailClient {
                     name: recipientName,
                 },
             ],
+            ...(replyTo ? { replyTo } : {}),
             subject,
             htmlContent,
         });

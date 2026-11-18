@@ -26,15 +26,17 @@ export async function POST(req: NextRequest) {
         const organisationName = process.env.NEXT_PUBLIC_ORGANISATION_NAME || "AmeriCare";
 
         const leadHtml = callBackLead({ firstName, lastName, phone, email, who, help });
+        const submitterReplyTo = email ? { name: `${firstName} ${lastName}`, email } : undefined;
 
         console.log("[call-back] Sending lead email to:", organisationEmail);
         const leadResponse = await client.sendEmail(
             organisationName,
             organisationEmail,
-            `${firstName} ${lastName}`,
-            email || organisationEmail,
+            organisationName,
+            organisationEmail,
             `Call Back Request: ${firstName} ${lastName}`,
-            leadHtml
+            leadHtml,
+            submitterReplyTo
         );
 
         const leadResponseText = await leadResponse.text();
@@ -42,6 +44,7 @@ export async function POST(req: NextRequest) {
 
         if (!leadResponse.ok) {
             console.error("[call-back] Brevo lead email failed:", leadResponseText);
+            console.error("[call-back] Submission payload (for manual follow-up):", JSON.stringify({ firstName, lastName, phone, email, who, help }));
             return NextResponse.json({ error: "Failed to send lead notification", details: leadResponseText }, { status: 500 });
         }
 

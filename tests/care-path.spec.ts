@@ -53,19 +53,20 @@ test.describe('Care Path Wizard - Pediatric Branch', () => {
 
     // Step 9: Review
     await expect(page.locator('h2')).toContainText('Review your request');
-    await expect(page.locator('text=Child / pediatric care')).toBeVisible();
-    await expect(page.locator('text=Skilled nursing at home')).toBeVisible();
-    await expect(page.locator('text=GAPP')).toBeVisible();
-    await expect(page.locator('text=30144')).toBeVisible();
-    await expect(page.locator('text=Jane Smith')).toBeVisible();
+    await expect(page.getByText('Child / pediatric care', { exact: true })).toBeVisible();
+    await expect(page.getByText('Skilled nursing at home', { exact: true })).toBeVisible();
+    await expect(page.getByText('GAPP', { exact: true })).toBeVisible();
+    await expect(page.getByText('30144', { exact: true })).toBeVisible();
+    await expect(page.getByText('Jane Smith', { exact: true })).toBeVisible();
 
     // Check consent and submit
     await page.click('label:has-text("I agree that AmeriCare")');
     await page.click('button:has-text("Send My Request")');
 
     // Should redirect to confirmation
-    await page.waitForURL('**/check-care-options/confirmation', { timeout: 10000 });
-    await expect(page.locator('h1')).toContainText('AmeriCare received your request');
+    await page.waitForURL('**/check-care-options/confirmation**', { timeout: 10000 });
+    await expect(page.locator('h1')).toContainText('Pediatric care review');
+    await expect(page.locator('text=Thank you, Jane.')).toBeVisible();
   });
 });
 
@@ -116,9 +117,9 @@ test.describe('Care Path Wizard - Adult Branch', () => {
 
     // Step 9: Review
     await expect(page.locator('h2')).toContainText('Review your request');
-    await expect(page.locator('text=Adult or senior care')).toBeVisible();
-    await expect(page.locator('text=Personal support')).toBeVisible();
-    await expect(page.locator('text=CCSP')).toBeVisible();
+    await expect(page.getByText('Adult or senior care', { exact: true })).toBeVisible();
+    await expect(page.getByText('Personal support', { exact: true })).toBeVisible();
+    await expect(page.getByText('CCSP', { exact: true })).toBeVisible();
 
     // Verify back button works
     await page.click('button:has-text("Back")');
@@ -168,7 +169,7 @@ test.describe('Care Path Wizard - Validation', () => {
 
     // Step 5: Try to continue without filling fields
     await page.click('button:has-text("Continue")');
-    await expect(page.locator('[role="alert"]')).toContainText('Please enter care zip code.');
+    await expect(page.getByRole('alert').filter({ hasText: 'Please enter care zip code.' })).toBeVisible();
   });
 
   test('validates ZIP code format', async ({ page }) => {
@@ -186,7 +187,7 @@ test.describe('Care Path Wizard - Validation', () => {
     await page.fill('input[placeholder="Enter 5-digit ZIP code"]', '123');
     await page.selectOption('select', 'As soon as possible');
     await page.click('button:has-text("Continue")');
-    await expect(page.locator('[role="alert"]')).toContainText('valid 5-digit ZIP code');
+    await expect(page.getByRole('alert').filter({ hasText: 'valid 5-digit ZIP code' })).toBeVisible();
   });
 });
 
@@ -209,13 +210,9 @@ test.describe('Care Path Wizard - Start Over', () => {
 });
 
 test.describe('Coordinator Form', () => {
-  test('validates required fields', async ({ page }) => {
+  test('keeps submit disabled until the form is complete', async ({ page }) => {
     await page.goto('/speak-with-coordinator');
-
-    // Try to submit without filling fields
-    await page.click('button:has-text("Request My Callback")');
-    // Should show toast error (form shouldn't submit)
-    await expect(page).toHaveURL('/speak-with-coordinator');
+    await expect(page.getByRole('button', { name: 'Request My Callback' })).toBeDisabled();
   });
 
   test('fills and submits the coordinator form', async ({ page }) => {
@@ -245,36 +242,36 @@ test.describe('Coordinator Form', () => {
     await page.click('button:has-text("Request My Callback")');
 
     // Should redirect to confirmation
-    await page.waitForURL('**/speak-with-coordinator/confirmation', { timeout: 10000 });
+    await page.waitForURL('**/speak-with-coordinator/confirmation**', { timeout: 10000 });
     await expect(page.locator('h1')).toContainText('Callback requested');
   });
 });
 
 test.describe('Navigation CTAs', () => {
-  test('hero has both CTA buttons', async ({ page }) => {
+  test('hero has both CTA links', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('a:has-text("Check Care Options")').first()).toBeVisible();
-    await expect(page.locator('a:has-text("Speak with Coordinator")').first()).toBeVisible();
+    const hero = page.locator('h1:has-text("Care that feels like home")').locator('..');
+    await expect(hero.locator('a[href="/check-care-options"]')).toBeVisible();
+    await expect(hero.locator('a[href="/speak-with-coordinator"]')).toBeVisible();
   });
 
-  test('nav has both CTA buttons', async ({ page }) => {
+  test('header has both CTA links', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('nav >> a:has-text("Check Care Options")')).toBeVisible();
-    await expect(page.locator('nav >> a:has-text("Speak with Coordinator")')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Check Care Options' }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Speak With a Coordinator' }).first()).toBeVisible();
   });
 });
 
 test.describe('Confirmation Pages', () => {
-  test('care path confirmation page renders', async ({ page }) => {
+  test('care path confirmation redirects without a submission', async ({ page }) => {
     await page.goto('/check-care-options/confirmation');
-    await expect(page.locator('h1')).toContainText('AmeriCare received your request');
-    await expect(page.locator('a:has-text("Call (404) 494-2187")')).toBeVisible();
-    await expect(page.locator('a:has-text("Return Home")')).toBeVisible();
+    await page.waitForURL('**/check-care-options', { timeout: 10000 });
   });
 
   test('coordinator confirmation page renders', async ({ page }) => {
-    await page.goto('/speak-with-coordinator/confirmation');
+    await page.goto('/speak-with-coordinator/confirmation?submitted=1');
     await expect(page.locator('h1')).toContainText('Callback requested');
     await expect(page.locator('a:has-text("Call (404) 494-2187")')).toBeVisible();
+    await expect(page.locator('a:has-text("Return Home")')).toBeVisible();
   });
 });

@@ -10,8 +10,6 @@ import {
     FaAngleDown, FaAsterisk, FaMapPin, FaCalendar,
     FaCommentDots, FaBriefcase, FaClock,
 } from "react-icons/fa6";
-import { BrevoEmailClient } from "@/lib/Classes/Email";
-import { applicationReceivedEmail, onlineApplication } from "@/lib/Email Templates";
 import InViewWrapper from "@/app/components/InViewWrapper";
 import { fadeIn } from "@/lib/AnimationVariants";
 
@@ -174,7 +172,7 @@ export default function FormSection() {
     const handleFileChange = (files: FileList | null) => {
         if (!files || files.length === 0) { setAttachFile(null); return; }
         const file = files[0];
-        if (file.size > 10 * 1024 * 1024) { setFileError("File too large (max 10 MB)"); return; }
+        if (file.size > 4 * 1024 * 1024) { setFileError("File too large (max 4 MB)"); return; }
         if (file.type !== "application/pdf") { setFileError("Please upload a PDF"); return; }
         setFileError("");
         setAttachFile(file);
@@ -183,93 +181,50 @@ export default function FormSection() {
     // ── submit ────────────────────────────────────────────────────────────────
     const performSubmit = async () => {
         setIsLoading(true);
-        const SendWithBrevo = new BrevoEmailClient();
+        try {
+            const data = new FormData();
+            data.append("firstName", firstNameText.trim());
+            data.append("lastName", lastNameText.trim());
+            data.append("email", emailText.trim());
+            data.append("phone", phoneText.trim());
+            data.append("position", position);
+            data.append("employmentPref", employmentPref);
+            data.append("startDate", startDate);
+            data.append("preferredShifts", preferredShifts.join(", ") || "Not specified");
+            data.append("city", city.trim());
+            data.append("zip", zip.trim());
+            data.append("hasTransport", hasTransport);
+            data.append("travelRange", travelRange);
+            data.append("yearsExp", yearsExp);
+            data.append("credential", credential);
+            data.append("skills", skills.join(", ") || "None selected");
+            data.append("experienceSummary", experienceSummary.trim());
+            data.append("daysAvailable", daysAvailable.join(", ") || "Not specified");
+            data.append("hoursPerWeek", hoursPerWeek);
+            data.append("hearAboutUs", hearAboutUs);
+            data.append("additionalNotes", additionalNotes.trim());
+            data.append("certify", String(certify));
+            data.append("smsConsent", String(smsConsent));
+            if (attachFile) data.append("resume", attachFile);
 
-        let resumeUrl = "";
-        if (attachFile) {
-            resumeUrl = await SendWithBrevo.uploadAttachment(attachFile);
+            const res = await fetch("/api/careers", { method: "POST", body: data });
+            if (!res.ok) {
+                const body = await res.json().catch(() => null);
+                throw new Error(body?.error || "Submission failed");
+            }
+
+            setShowThanks(true);
+            handleReset();
+        } finally {
+            setIsLoading(false);
         }
-
-        const payload = {
-            firstName: firstNameText.trim(),
-            lastName: lastNameText.trim(),
-            email: emailText.trim(),
-            phone: phoneText.trim(),
-            position,
-            employmentPref,
-            startDate,
-            preferredShifts: preferredShifts.join(", ") || "Not specified",
-            city: city.trim(),
-            zip: zip.trim(),
-            hasTransport,
-            travelRange,
-            yearsExp,
-            credential,
-            skills: skills.join(", ") || "None selected",
-            experienceSummary: experienceSummary.trim(),
-            daysAvailable: daysAvailable.join(", ") || "Not specified",
-            hoursPerWeek,
-            hearAboutUs,
-            additionalNotes: additionalNotes.trim(),
-            resumeUrl,
-        };
-
-        const ORGANISATION_EMAIL = process.env.NEXT_PUBLIC_ORGANISATION_EMAIL!;
-        const ORGANISATION_NAME = process.env.NEXT_PUBLIC_ORGANISATION_NAME!;
-
-        const hrEmail = onlineApplication({
-            firstName: payload.firstName,
-            lastName: payload.lastName,
-            email: payload.email,
-            phone: payload.phone,
-            position: payload.position,
-            employmentPref: payload.employmentPref,
-            startDate: payload.startDate,
-            preferredShifts: payload.preferredShifts,
-            city: payload.city,
-            zip: payload.zip,
-            hasTransport: payload.hasTransport,
-            travelRange: payload.travelRange,
-            yearsExp: payload.yearsExp,
-            credential: payload.credential,
-            skills: payload.skills,
-            experienceSummary: payload.experienceSummary,
-            daysAvailable: payload.daysAvailable,
-            hoursPerWeek: payload.hoursPerWeek,
-            hearAboutUs: payload.hearAboutUs,
-            additionalNotes: payload.additionalNotes,
-            resume: payload.resumeUrl,
-            coverLetter: payload.additionalNotes,
-        });
-
-        const clientEmail = applicationReceivedEmail({
-            firstName: payload.firstName,
-            lastName: payload.lastName,
-            position: payload.position,
-        });
-
-        await SendWithBrevo.sendEmail(
-            ORGANISATION_NAME, ORGANISATION_EMAIL,
-            `${payload.firstName} ${payload.lastName}`, payload.email,
-            "Online Application", hrEmail,
-        );
-
-        await SendWithBrevo.sendEmail(
-            `${payload.firstName} ${payload.lastName}`, payload.email,
-            ORGANISATION_NAME, ORGANISATION_EMAIL,
-            "Application Received - AmeriCare", clientEmail,
-        );
-
-        setIsLoading(false);
-        setShowThanks(true);
-        handleReset();
     };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (isLoading || !canSubmit) return;
         toast.promise(performSubmit(), {
-            error: "Oops! Failed to submit application",
+            error: (err: Error) => err?.message || "Oops! Failed to submit application",
             loading: "Submitting application...",
             success: "Application submitted ✨",
         });

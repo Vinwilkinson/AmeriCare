@@ -197,7 +197,7 @@ export default function CarePathWizard() {
                 setFormData((prev) => ({ ...prev, audience: value, need: "", coverage: "", status: "", relationship: "" }));
                 setFlowStep(1);
             } else {
-                setFlowStep(flowStep + 1);
+                router.push("/speak-with-coordinator");
             }
             setFlowError("");
             return;
