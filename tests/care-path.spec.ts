@@ -210,9 +210,22 @@ test.describe('Care Path Wizard - Start Over', () => {
 });
 
 test.describe('Coordinator Form', () => {
-  test('keeps submit disabled until the form is complete', async ({ page }) => {
+  test('shows errors and focuses first invalid field on incomplete submit', async ({ page }) => {
     await page.goto('/speak-with-coordinator');
-    await expect(page.getByRole('button', { name: 'Request My Callback' })).toBeDisabled();
+    const submit = page.getByRole('button', { name: 'Request My Callback' });
+    await expect(submit).toBeEnabled();
+
+    // Empty submit → audience error + focus lands on first audience button
+    await submit.click();
+    await expect(page.getByText('Choose who needs care.').first()).toBeVisible();
+    await expect(page.locator('button:has-text("A child")')).toBeFocused();
+
+    // Choose audience, submit again → first name error + focus moves to first name input
+    await page.click('button:has-text("A child")');
+    await expect(page.getByText('Choose who needs care.')).toBeHidden();
+    await submit.click();
+    await expect(page.getByText('Enter a first name.')).toBeVisible();
+    await expect(page.locator('input[placeholder="First name"]')).toBeFocused();
   });
 
   test('fills and submits the coordinator form', async ({ page }) => {

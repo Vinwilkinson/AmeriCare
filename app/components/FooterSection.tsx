@@ -24,6 +24,7 @@ const aboutLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
     { text: "Care Resources", href: "/resources" },
+    { text: "Community Resources", href: "/resources/community" },
     { text: "Careers", href: "/careers" },
     { text: "Contact Us", href: "/speak-with-coordinator" },
 ];

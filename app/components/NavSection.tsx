@@ -15,6 +15,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
     const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
     const [aboutOpen, setAboutOpen] = useState<boolean>(false);
     const [servicesOpen, setServicesOpen] = useState<boolean>(false);
+    const [resourcesOpen, setResourcesOpen] = useState<boolean>(false);
 
     const controls = useAnimation();
     const isHome = variation === "home";
@@ -44,6 +45,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
     const isActive = (path: string) => pathname === path;
     const isAboutActive = pathname === "/why-us" || pathname.startsWith("/why-us/") || pathname === "/testimonials";
     const isServicesActive = pathname === "/services" || pathname.startsWith("/services/");
+    const isResourcesActive = pathname === "/resources" || pathname.startsWith("/resources/");
 
     return (
         <>
@@ -152,10 +154,36 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         "px-3.5 py-2 border-b-2 whitespace-nowrap hover:text-leaf smooth",
                         isActive("/careers") ? "font-bold border-b-leaf text-leaf" : "border-b-transparent hover:border-b-leaf/30"
                     )} href={"/careers"}>Careers</Link>
-                    <Link className={clsx(
-                        "px-3.5 py-2 border-b-2 whitespace-nowrap hover:text-leaf smooth",
-                        isActive("/resources") ? "font-bold border-b-leaf text-leaf" : "border-b-transparent hover:border-b-leaf/30"
-                    )} href={"/resources"}>Resources</Link>
+                    {/* Resources dropdown */}
+                    <div
+                        className="relative"
+                        onMouseEnter={() => setResourcesOpen(true)}
+                        onMouseLeave={() => setResourcesOpen(false)}
+                    >
+                        <Link
+                            className={clsx(
+                                "px-3.5 py-2 border-b-2 whitespace-nowrap hover:text-leaf smooth flex items-center gap-1",
+                                isResourcesActive ? "font-bold border-b-leaf text-leaf" : "border-b-transparent hover:border-b-leaf/30"
+                            )} href={"/resources"}
+                        >
+                            Resources <FaChevronDown className={clsx("text-xs transition-transform", resourcesOpen && "rotate-180")} />
+                        </Link>
+                        {resourcesOpen && (
+                            <div className={clsx(
+                                "absolute top-full left-0 mt-1 bg-white border border-black/10 rounded-xl shadow-xl py-2 min-w-[230px] z-50",
+                                !isHome && "dark:bg-darkBg dark:border-white/10"
+                            )}>
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-mint hover:text-forest smooth",
+                                    isActive("/resources") && "text-leaf font-semibold"
+                                )} href={"/resources"}>Guides &amp; Checklists</Link>
+                                <Link className={clsx(
+                                    "block px-5 py-2.5 hover:bg-mint hover:text-forest smooth",
+                                    isActive("/resources/community") && "text-leaf font-semibold"
+                                )} href={"/resources/community"}>Community Resources</Link>
+                            </div>
+                        )}
+                    </div>
                 </nav>
 
                 {/* CTAs */}
@@ -264,8 +292,12 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                     )} href={"/careers"}>Careers</Link>
                     <Link onClick={handleClick} className={clsx(
                         "px-5 origin-left py-2 border-b-2 whitespace-nowrap hover:text-leaf smooth",
-                        isActive("/resources") ? "font-bold border-b-leaf text-leaf" : "border-b-transparent hover:border-b-leaf/25"
+                        isResourcesActive ? "font-bold border-b-leaf text-leaf" : "border-b-transparent hover:border-b-leaf/25"
                     )} href={"/resources"}>Resources</Link>
+                    <Link onClick={handleClick} className={clsx(
+                        "pl-10 origin-right py-1 text-base whitespace-nowrap hover:text-leaf smooth",
+                        isActive("/resources/community") ? "font-bold text-leaf" : "text-black/70 dark:text-white/70"
+                    )} href={"/resources/community"}>Community Resources</Link>
                     <Link
                         onClick={handleClick}
                         href="/check-care-options"
