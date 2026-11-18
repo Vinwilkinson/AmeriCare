@@ -1,4 +1,4 @@
-import { BrevoEmailClient } from "@/lib/Classes/Email";
+import { BrevoEmailClient, INTERNAL_LEAD_RECIPIENTS } from "@/lib/Classes/Email";
 import { carePathLead, carePathConfirmation } from "@/lib/Email Templates";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -47,7 +47,8 @@ export async function POST(req: NextRequest) {
             organisationEmail,
             `New Care Path Lead: ${firstName} ${lastName}`,
             leadHtml,
-            { name: `${firstName} ${lastName}`, email }
+            { name: `${firstName} ${lastName}`, email },
+            INTERNAL_LEAD_RECIPIENTS
         );
 
         const leadResponseText = await leadResponse.text();

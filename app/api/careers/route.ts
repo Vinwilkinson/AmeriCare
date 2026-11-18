@@ -1,4 +1,4 @@
-import { BrevoEmailClient } from "@/lib/Classes/Email";
+import { BrevoEmailClient, INTERNAL_LEAD_RECIPIENTS } from "@/lib/Classes/Email";
 import { applicationReceivedEmail, onlineApplication } from "@/lib/Email Templates";
 import { NextResponse } from "next/server";
 
@@ -92,7 +92,8 @@ export async function POST(req: Request) {
             organisationEmail,
             "Online Application",
             hrEmail,
-            { name: `${firstName} ${lastName}`, email }
+            { name: `${firstName} ${lastName}`, email },
+            INTERNAL_LEAD_RECIPIENTS
         );
         const leadText = await leadResponse.text();
         console.log("[careers] Application response status:", leadResponse.status);

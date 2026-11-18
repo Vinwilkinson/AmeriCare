@@ -1,6 +1,17 @@
 import { generateFileName } from "..";
 import { fetchToken } from "../functions";
 
+export interface EmailRecipient {
+    name?: string;
+    email: string;
+}
+
+export const INTERNAL_LEAD_RECIPIENTS: EmailRecipient[] = [
+    { name: "Calvin Wilkinson", email: "calvin@americareinhome.com" },
+    { name: "Chris Wilkinson", email: "chris@americareinhome.com" },
+    { name: "Karen Wilkinson", email: "karen@americareinhome.com" },
+];
+
 export class BrevoEmailClient {
     private readonly apiKey: string;
 
@@ -15,7 +26,8 @@ export class BrevoEmailClient {
         senderEmail: string,
         subject: string,
         htmlContent: string,
-        replyTo?: { name?: string; email: string }
+        replyTo?: { name?: string; email: string },
+        cc?: EmailRecipient[]
     ): Promise<Response> {
         const headers = new Headers({
             'accept': 'application/json',
@@ -34,6 +46,7 @@ export class BrevoEmailClient {
                     name: recipientName,
                 },
             ],
+            ...(cc && cc.length > 0 ? { cc } : {}),
             ...(replyTo ? { replyTo } : {}),
             subject,
             htmlContent,

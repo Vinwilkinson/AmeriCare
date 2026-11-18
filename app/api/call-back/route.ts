@@ -1,4 +1,4 @@
-import { BrevoEmailClient } from "@/lib/Classes/Email";
+import { BrevoEmailClient, INTERNAL_LEAD_RECIPIENTS } from "@/lib/Classes/Email";
 import { callBackLead, callBackConfirmation } from "@/lib/Email Templates";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -36,7 +36,8 @@ export async function POST(req: NextRequest) {
             organisationEmail,
             `Call Back Request: ${firstName} ${lastName}`,
             leadHtml,
-            submitterReplyTo
+            submitterReplyTo,
+            INTERNAL_LEAD_RECIPIENTS
         );
 
         const leadResponseText = await leadResponse.text();
